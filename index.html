@@ -119,7 +119,7 @@
               <span class="service-pill">Engineering Leadership Mentoring</span>
             </div>
             <p class="consult-note">
-              Pick a date and time, share your scope, and submit. The request opens directly in WhatsApp with your
+              Pick a date, start time, and end time, share your scope, and submit. The request opens directly in WhatsApp with your
               selected service details.
             </p>
             <p class="consult-note">Fixed pricing: 30-minute consultation at $10.</p>
@@ -150,8 +150,13 @@
               </label>
 
               <label class="form-field">
-                <span>Time</span>
-                <input type="time" name="bookingTime" required />
+                <span>Start time (IST)</span>
+                <input type="time" name="bookingStartTime" required />
+              </label>
+
+              <label class="form-field">
+                <span>End time (IST)</span>
+                <input type="time" name="bookingEndTime" required />
               </label>
             </div>
 
@@ -178,7 +183,7 @@
             </label>
 
             <button class="button button-primary" type="submit">Send booking to WhatsApp</button>
-            <p class="booking-note">Price: $10 for a 30-minute session.</p>
+            <p class="booking-note">Price: $10 for a 30-minute session. All booking times are in IST (Asia/Kolkata).</p>
             <p class="booking-status" data-booking-status aria-live="polite"></p>
           </form>
         </div>

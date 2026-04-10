@@ -327,7 +327,8 @@ if (bookingForm) {
     const clientName = bookingForm.querySelector('input[name="clientName"]')?.value.trim() || '';
     const clientEmail = bookingForm.querySelector('input[name="clientEmail"]')?.value.trim() || 'Not provided';
     const bookingDate = bookingForm.querySelector('input[name="bookingDate"]')?.value || '';
-    const bookingTime = bookingForm.querySelector('input[name="bookingTime"]')?.value || '';
+    const bookingStartTime = bookingForm.querySelector('input[name="bookingStartTime"]')?.value || '';
+    const bookingEndTime = bookingForm.querySelector('input[name="bookingEndTime"]')?.value || '';
     const workDescription = bookingForm.querySelector('textarea[name="workDescription"]')?.value.trim() || '';
     const selectedServices = [...bookingForm.querySelectorAll('input[name="serviceType"]:checked')].map(
       (checkbox) => checkbox.value
@@ -347,9 +348,16 @@ if (bookingForm) {
       return;
     }
 
-    if (!clientName || !bookingDate || !bookingTime || !workDescription) {
+    if (!clientName || !bookingDate || !bookingStartTime || !bookingEndTime || !workDescription) {
       if (bookingStatus) {
         bookingStatus.textContent = 'Please fill all required fields before submitting.';
+      }
+      return;
+    }
+
+    if (bookingEndTime <= bookingStartTime) {
+      if (bookingStatus) {
+        bookingStatus.textContent = 'End time must be later than start time.';
       }
       return;
     }
@@ -360,7 +368,9 @@ if (bookingForm) {
       `Name: ${clientName}`,
       `Email: ${clientEmail}`,
       `Preferred Date: ${bookingDate}`,
-      `Preferred Time: ${bookingTime}`,
+      `Start Time (IST): ${bookingStartTime}`,
+      `End Time (IST): ${bookingEndTime}`,
+      'Timezone: IST (Asia/Kolkata)',
       `Service Type: ${selectedServices.join(', ')}`,
       `Work Description: ${workDescription}`,
       '',
