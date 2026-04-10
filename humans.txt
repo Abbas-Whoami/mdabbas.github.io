@@ -1,0 +1,51 @@
+/* HUMANS.TXT */
+/* Mohamed Abbas AI Consulting - Site Team and Credentials */
+
+/* TEAM */
+Name: Mohamed Abbas Moynudeen
+Title: Principal Engineer, AI Consultant
+Role: Founder
+Email: Contact via LinkedIn
+LinkedIn: https://www.linkedin.com/in/abbas-md/
+
+/* SITE INFORMATION */
+Site Name: Mohamed Abbas AI Consulting
+Site URL: https://mdabbas.com/
+Language: English
+Standards: HTML5, CSS3, JavaScript
+Components: Static site, semantic HTML, accessible design
+
+/* EXPERTISE AREAS */
+Specializations: AI consulting, LLM systems, RAG architecture, cloud architecture, data engineering, enterprise platform delivery
+Industries: AI/ML, Cloud Computing, Data Engineering, Enterprise Software, Automation
+Years of Experience: 10+
+
+/* CONSULTING SERVICES */
+Service 1: AI Consulting
+Service 2: LLM and RAG Design
+Service 3: Technical Architecture Consulting
+Service 4: Cloud and Data Engineering Consulting
+Service 5: ETL and Platform Strategy
+Service 6: Engineering Leadership Mentoring
+
+/* SOCIAL PROFILES */
+LinkedIn: https://www.linkedin.com/in/abbas-md/
+
+/* CONTENT AREAS */
+Portfolio: https://mdabbas.com/projects/
+Articles: https://mdabbas.com/articles/
+Lab Concepts: https://mdabbas.com/lab/
+
+/* CONTACT */
+Consultation Booking: https://mdabbas.com/#book-services
+Timezone: IST (Asia/Kolkata)
+Rate: $10 for 30-minute consultation
+
+/* SITE CREDITS */
+Built with: HTML5, CSS3, JavaScript
+Architecture: Static site generator
+Design: Semantic, accessible, performance-optimized
+Analytics: Privacy-first observability
+
+/* LAST UPDATED */
+Last Update: April 2026
