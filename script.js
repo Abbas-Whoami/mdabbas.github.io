@@ -3,6 +3,7 @@ const navLinks = document.querySelectorAll('[data-nav]');
 const pageNav = document.body.dataset.nav;
 const profileImage = document.querySelector('[data-profile-image]');
 const bookingForm = document.querySelector('[data-whatsapp-booking-form]');
+const projectCarousel = document.querySelector('[data-project-carousel]');
 const articleCarousel = document.querySelector('[data-article-carousel]');
 
 if (pageNav) {
@@ -116,27 +117,40 @@ if (bookingForm) {
   });
 }
 
-if (articleCarousel) {
-  const articleTrack = articleCarousel.querySelector('[data-article-track]');
-  const articleSlides = articleCarousel.querySelectorAll('[data-article-slide]');
-  const prevButton = articleCarousel.querySelector('[data-article-prev]');
-  const nextButton = articleCarousel.querySelector('[data-article-next]');
-  const dotButtons = articleCarousel.querySelectorAll('[data-article-dot]');
+const initializeCarousel = ({
+  carousel,
+  trackSelector,
+  slideSelector,
+  prevSelector,
+  nextSelector,
+  dotSelector,
+  dotDataKey,
+}) => {
+  if (!carousel) {
+    return;
+  }
+
+  const track = carousel.querySelector(trackSelector);
+  const slides = carousel.querySelectorAll(slideSelector);
+  const prevButton = carousel.querySelector(prevSelector);
+  const nextButton = carousel.querySelector(nextSelector);
+  const dotButtons = carousel.querySelectorAll(dotSelector);
+
+  if (!track || !slides.length) {
+    return;
+  }
+
   let currentSlideIndex = 0;
 
   const updateCarousel = () => {
-    if (!articleTrack || !articleSlides.length) {
-      return;
-    }
-
-    articleTrack.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+    track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
 
     if (prevButton) {
       prevButton.disabled = currentSlideIndex === 0;
     }
 
     if (nextButton) {
-      nextButton.disabled = currentSlideIndex === articleSlides.length - 1;
+      nextButton.disabled = currentSlideIndex === slides.length - 1;
     }
 
     dotButtons.forEach((dotButton, index) => {
@@ -153,15 +167,15 @@ if (articleCarousel) {
 
   if (nextButton) {
     nextButton.addEventListener('click', () => {
-      currentSlideIndex = Math.min(articleSlides.length - 1, currentSlideIndex + 1);
+      currentSlideIndex = Math.min(slides.length - 1, currentSlideIndex + 1);
       updateCarousel();
     });
   }
 
   dotButtons.forEach((dotButton) => {
     dotButton.addEventListener('click', () => {
-      const requestedIndex = Number(dotButton.dataset.articleDot);
-      if (Number.isInteger(requestedIndex) && requestedIndex >= 0 && requestedIndex < articleSlides.length) {
+      const requestedIndex = Number(dotButton.dataset[dotDataKey]);
+      if (Number.isInteger(requestedIndex) && requestedIndex >= 0 && requestedIndex < slides.length) {
         currentSlideIndex = requestedIndex;
         updateCarousel();
       }
@@ -169,4 +183,24 @@ if (articleCarousel) {
   });
 
   updateCarousel();
-}
+};
+
+initializeCarousel({
+  carousel: projectCarousel,
+  trackSelector: '[data-project-track]',
+  slideSelector: '[data-project-slide]',
+  prevSelector: '[data-project-prev]',
+  nextSelector: '[data-project-next]',
+  dotSelector: '[data-project-dot]',
+  dotDataKey: 'projectDot',
+});
+
+initializeCarousel({
+  carousel: articleCarousel,
+  trackSelector: '[data-article-track]',
+  slideSelector: '[data-article-slide]',
+  prevSelector: '[data-article-prev]',
+  nextSelector: '[data-article-next]',
+  dotSelector: '[data-article-dot]',
+  dotDataKey: 'articleDot',
+});
