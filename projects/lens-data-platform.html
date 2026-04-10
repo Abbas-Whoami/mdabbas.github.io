@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lens Data Platform project page for Mohamed Abbas Mojnudeen."
+    />
+    <title>Lens Data Platform | Mohamed Abbas Mojnudeen</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-nav="projects">
+    <div class="site-bg" aria-hidden="true">
+      <div class="site-orb orb-one"></div>
+      <div class="site-orb orb-two"></div>
+      <div class="site-orb orb-three"></div>
+      <div class="site-grid"></div>
+      <div class="site-beam beam-one"></div>
+      <div class="site-beam beam-two"></div>
+    </div>
+
+    <header class="site-header shell">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">MA</span>
+        <span class="brand-copy">
+          <strong>Mohamed Abbas</strong>
+          <span>Principal Engineer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="index.html" data-nav="projects">Projects</a>
+        <a href="../Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="https://www.linkedin.com/in/abbas-md/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main class="shell page-top-gap">
+      <section class="page-hero reveal">
+        <p class="eyebrow">2022 - 2024 | Wood Mackenzie</p>
+        <h1 class="page-title">Lens Data Platform</h1>
+        <p class="page-summary">
+          A reusable ingestion and processing platform built to collect, transform, validate, and operationalize
+          mission-critical energy datasets from multiple global sources.
+        </p>
+      </section>
+
+      <section class="project-layout reveal">
+        <div class="project-main">
+          <article class="content-block glass-panel">
+            <p class="mini-label">Project context</p>
+            <h2 class="content-title">The platform challenge</h2>
+            <p>
+              The business needed dependable access to multiple high-value external datasets, but scraper onboarding,
+              deployment, recovery, and quality control were too fragmented. The platform needed to be scalable,
+              modular, and resilient enough to support growth across multiple business units without repeating the same
+              delivery work for every new source.
+            </p>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">How I achieved it</p>
+            <h2 class="content-title">Execution approach</h2>
+            <div class="step-grid">
+              <div class="step-card">
+                <strong>01</strong>
+                <p>Designed the platform as a reusable system rather than a sequence of isolated scraper builds.</p>
+              </div>
+              <div class="step-card">
+                <strong>02</strong>
+                <p>Created modular Terraform deployment components so new datasets could be onboarded faster and more consistently.</p>
+              </div>
+              <div class="step-card">
+                <strong>03</strong>
+                <p>Integrated orchestration, retries, backfills, and self-healing behavior into the pipeline lifecycle.</p>
+              </div>
+              <div class="step-card">
+                <strong>04</strong>
+                <p>Connected the QC validation system directly into the platform to catch completeness and anomaly issues automatically.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Architecture</p>
+            <h2 class="content-title">System blueprint</h2>
+            <div class="architecture-flow">
+              <div class="flow-node">
+                <h3>Scraper framework</h3>
+                <p>Python-based scrapers handle source-specific collection logic and operate across constrained external environments.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Orchestration</h3>
+                <p>Step Functions and Lambda coordinate fault-tolerant multi-stage ingestion and recovery behavior.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Storage and transformation</h3>
+                <p>S3 raw and processed zones plus Glue ETL scripts and Athena queries support pipeline standardization.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Validation integration</h3>
+                <p>The QC framework catches missing values, anomalies, and schema issues as part of normal delivery flow.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Deployment model</h3>
+                <p>Shared Terraform deployment modules accelerate provisioning of new scrapers and ETL paths.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Delivery detail</p>
+            <h2 class="content-title">What I led directly</h2>
+            <ul class="detail-list compact-list">
+              <li>Architecture and roadmap for a reusable ingestion platform.</li>
+              <li>Leadership of an 8-member data engineering team.</li>
+              <li>Alignment across business teams, clients, and engineering stakeholders.</li>
+              <li>Mentorship on observability, modular deployment, and automation-first pipeline design.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="project-side reveal">
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Quick facts</p>
+            <ul class="fact-list">
+              <li><span>Role</span><strong>Principal Engineer</strong></li>
+              <li><span>Team</span><strong>8 engineers</strong></li>
+              <li><span>Core stack</span><strong>Python, ECS, Lambda, Glue, Athena, S3</strong></li>
+              <li><span>Infrastructure</span><strong>Terraform shared deployment modules</strong></li>
+            </ul>
+          </article>
+
+          <article class="fact-panel glass-panel accent-panel">
+            <p class="mini-label">Business effect</p>
+            <div class="impact-metric"><strong>15+</strong><span>mission-critical datasets automated</span></div>
+            <div class="impact-metric"><strong>60%</strong><span>faster scraper and ETL onboarding</span></div>
+            <div class="impact-metric"><strong>1</strong><span>contractor-to-principal transition driven by platform success</span></div>
+          </article>
+
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Explore next</p>
+            <div class="side-links">
+              <a href="ai-asset-tracker.html">AI Asset Tracker</a>
+              <a href="qc-validation-framework.html">QC Tool and Validation Framework</a>
+              <a href="innovation-labs.html">Innovation Labs</a>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </main>
+  </body>
+  <script src="../script.js"></script>
+</html>
