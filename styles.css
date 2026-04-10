@@ -16,6 +16,22 @@
   --radius: 1.75rem;
 }
 
+:root[data-theme="dark"] {
+  --bg: #081311;
+  --bg-soft: #0c1d1a;
+  --panel: rgba(12, 30, 26, 0.78);
+  --panel-strong: rgba(16, 38, 34, 0.92);
+  --border: rgba(161, 224, 206, 0.18);
+  --text: #d7eee8;
+  --muted: #9abbb3;
+  --accent: #2fb7a0;
+  --accent-strong: #1f8d7d;
+  --accent-soft: #123c34;
+  --signal: #f2a073;
+  --signal-soft: #3f2a1f;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -35,6 +51,10 @@ body {
   --scene-sat: 1;
   --scene-glow: 0.85;
   background: linear-gradient(180deg, #ffffff 0%, var(--bg) 54%, var(--bg-soft) 100%);
+}
+
+:root[data-theme="dark"] body {
+  background: linear-gradient(180deg, #07100f 0%, var(--bg) 52%, var(--bg-soft) 100%);
 }
 
 body[data-scene="scene-0"] {
@@ -319,10 +339,40 @@ img {
   box-shadow: 0 10px 28px rgba(17, 54, 48, 0.06);
 }
 
+:root[data-theme="dark"] .site-nav {
+  background: rgba(10, 33, 29, 0.78);
+  border-color: rgba(161, 224, 206, 0.2);
+}
+
 .site-nav a {
   position: relative;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.theme-toggle {
+  border: 1px solid rgba(22, 48, 44, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--accent-strong);
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.42rem 0.78rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(17, 54, 48, 0.12);
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  background: rgba(15, 42, 37, 0.95);
+  border-color: rgba(161, 224, 206, 0.24);
+  color: #d6f3ec;
 }
 
 .site-nav a.active,
@@ -457,6 +507,32 @@ p {
 .button-secondary {
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(22, 48, 44, 0.1);
+}
+
+:root[data-theme="dark"] .button-secondary,
+:root[data-theme="dark"] .carousel-button,
+:root[data-theme="dark"] .page-chip,
+:root[data-theme="dark"] .service-pill,
+:root[data-theme="dark"] .service-check-grid label,
+:root[data-theme="dark"] .step-card,
+:root[data-theme="dark"] .flow-node {
+  background: rgba(13, 33, 29, 0.88);
+  border-color: rgba(161, 224, 206, 0.2);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .accent-panel {
+  background: linear-gradient(145deg, rgba(17, 42, 37, 0.96), rgba(20, 62, 54, 0.86));
+}
+
+:root[data-theme="dark"] .site-grid {
+  background-image:
+    linear-gradient(rgba(146, 210, 192, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(146, 210, 192, 0.08) 1px, transparent 1px);
+}
+
+:root[data-theme="dark"] .site-beam {
+  background: linear-gradient(90deg, transparent, rgba(95, 206, 183, 0.45), transparent);
 }
 
 .glass-panel {

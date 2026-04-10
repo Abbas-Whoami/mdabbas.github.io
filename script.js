@@ -6,9 +6,99 @@ const bookingForm = document.querySelector('[data-whatsapp-booking-form]');
 const projectCarousel = document.querySelector('[data-project-carousel]');
 const articleCarousel = document.querySelector('[data-article-carousel]');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const magneticTargets = document.querySelectorAll('.button, .carousel-button');
+const magneticTargetSelector = '.button, .carousel-button, .theme-toggle';
 const energyCards = document.querySelectorAll('.project-preview, .feature-card, .capability-card, .content-block, .fact-panel, .step-card, .flow-node');
 const sceneSections = document.querySelectorAll('main .section, main .page-hero, main .project-layout, main .content-block');
+const themeStorageKey = 'site-theme-preference';
+const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+const getStoredThemePreference = () => {
+  const preference = localStorage.getItem(themeStorageKey);
+  return preference === 'light' || preference === 'dark' || preference === 'auto' ? preference : 'auto';
+};
+
+let themePreference = getStoredThemePreference();
+
+const resolveTheme = (preference) => {
+  if (preference === 'light' || preference === 'dark') {
+    return preference;
+  }
+
+  return systemThemeQuery.matches ? 'dark' : 'light';
+};
+
+const applyTheme = (preference) => {
+  const resolvedTheme = resolveTheme(preference);
+  document.documentElement.setAttribute('data-theme', resolvedTheme);
+  document.body.setAttribute('data-theme', resolvedTheme);
+  return resolvedTheme;
+};
+
+const describeThemePreference = (preference) => {
+  if (preference === 'auto') {
+    return 'Auto';
+  }
+
+  return preference === 'dark' ? 'Dark' : 'Light';
+};
+
+let themeToggleButton;
+
+const updateThemeToggle = () => {
+  if (!themeToggleButton) {
+    return;
+  }
+
+  const resolvedTheme = resolveTheme(themePreference);
+  const icon = resolvedTheme === 'dark' ? '🌙' : '☀️';
+  themeToggleButton.textContent = `${icon} ${describeThemePreference(themePreference)}`;
+  themeToggleButton.setAttribute('aria-label', `Theme mode: ${describeThemePreference(themePreference)}. Click to change.`);
+};
+
+const createThemeToggle = () => {
+  const nav = document.querySelector('.site-nav');
+  if (!nav) {
+    return;
+  }
+
+  themeToggleButton = document.createElement('button');
+  themeToggleButton.type = 'button';
+  themeToggleButton.className = 'theme-toggle';
+  themeToggleButton.setAttribute('data-theme-toggle', 'true');
+  nav.appendChild(themeToggleButton);
+
+  updateThemeToggle();
+
+  themeToggleButton.addEventListener('click', () => {
+    if (themePreference === 'auto') {
+      themePreference = 'dark';
+    } else if (themePreference === 'dark') {
+      themePreference = 'light';
+    } else {
+      themePreference = 'auto';
+    }
+
+    localStorage.setItem(themeStorageKey, themePreference);
+    applyTheme(themePreference);
+    updateThemeToggle();
+  });
+};
+
+applyTheme(themePreference);
+createThemeToggle();
+
+const handleSystemThemeChange = () => {
+  if (themePreference === 'auto') {
+    applyTheme(themePreference);
+    updateThemeToggle();
+  }
+};
+
+if (typeof systemThemeQuery.addEventListener === 'function') {
+  systemThemeQuery.addEventListener('change', handleSystemThemeChange);
+} else if (typeof systemThemeQuery.addListener === 'function') {
+  systemThemeQuery.addListener(handleSystemThemeChange);
+}
 
 if (!prefersReducedMotion) {
   const fxStage = document.createElement('div');
@@ -158,7 +248,9 @@ if (!prefersReducedMotion && 'IntersectionObserver' in window && sceneSections.l
   });
 }
 
-if (!prefersReducedMotion && magneticTargets.length) {
+if (!prefersReducedMotion) {
+  const magneticTargets = document.querySelectorAll(magneticTargetSelector);
+
   magneticTargets.forEach((target) => {
     target.addEventListener('pointermove', (event) => {
       const rect = target.getBoundingClientRect();
