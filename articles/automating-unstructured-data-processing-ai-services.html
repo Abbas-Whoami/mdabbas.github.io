@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Automating Large-Scale Unstructured Data Processing with AI Services by Mohamed Abbas Moynudeen."
+    />
+    <title>Automating Unstructured Data Processing with AI Services | Mohamed Abbas Moynudeen</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-nav="articles">
+    <div class="site-bg" aria-hidden="true">
+      <div class="site-orb orb-one"></div>
+      <div class="site-orb orb-two"></div>
+      <div class="site-orb orb-three"></div>
+      <div class="site-grid"></div>
+      <div class="site-beam beam-one"></div>
+      <div class="site-beam beam-two"></div>
+    </div>
+
+    <header class="site-header shell">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">MA</span>
+        <span class="brand-copy">
+          <strong>Mohamed Abbas</strong>
+          <span>Principal Engineer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="../projects/index.html" data-nav="projects">Projects</a>
+        <a href="index.html" data-nav="articles">Articles</a>
+        <a href="../Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="https://www.linkedin.com/in/abbas-md/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main class="shell page-top-gap">
+      <section class="page-hero reveal">
+        <p class="eyebrow">Published article 📝</p>
+        <h1 class="page-title">Automating Large-Scale Unstructured Data Processing with AI Services 🤖</h1>
+        <p class="page-summary">Mohamed Abbas Moynudeen | November 7, 2024</p>
+        <div class="articles-pagination" aria-label="Article pages">
+          <a class="page-chip" href="neurosymbolic-ai-data-industry.html" aria-label="Open article page 1">1</a>
+          <a class="page-chip" href="evolution-llm-grounding.html" aria-label="Open article page 2">2</a>
+          <a class="page-chip" href="ai-powered-log-analysis-legacy-systems.html" aria-label="Open article page 3">3</a>
+          <a class="page-chip" href="aws-bedrock-ai-etl.html" aria-label="Open article page 4">4</a>
+          <span class="page-chip page-chip-active" aria-current="page">5</span>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <article class="content-block glass-panel">
+          <p>
+            Organizations handle rapidly growing volumes of unstructured content including text, images, social media,
+            and video streams. AI services now make it possible to automate large parts of this pipeline, reducing
+            manual effort while improving speed, quality, and insight depth.
+          </p>
+
+          <h3>1. Intelligent Data Ingestion 📥</h3>
+          <p>AI helps filter, route, and classify incoming unstructured data at the edge of the pipeline.</p>
+          <ul class="detail-list compact-list">
+            <li><strong>AI-based filtering:</strong> Services like Amazon Comprehend, Google Cloud NLP, and Azure Text Analytics can prioritize relevant records by sentiment, topic, and intent.</li>
+            <li><strong>Real-time tagging:</strong> Streaming labels like economy, technology, product, and support allow faster downstream retrieval and processing.</li>
+          </ul>
+
+          <h3>2. Automated Metadata Tagging in Storage 🏷️</h3>
+          <ul class="detail-list compact-list">
+            <li><strong>Image and video tagging:</strong> Google Vision AI and Amazon Rekognition can detect objects, entities, and scene-level context.</li>
+            <li><strong>Catalog integration:</strong> Metadata can be indexed through systems such as Apache Atlas and AWS Glue Data Catalog for discoverability.</li>
+          </ul>
+
+          <h3>3. AI-Enhanced Data Processing 🧠</h3>
+          <ul class="detail-list compact-list">
+            <li><strong>Text analytics:</strong> Sentiment, entity extraction, and topic modeling for large text corpora.</li>
+            <li><strong>Multimedia analytics:</strong> Object detection and behavioral interpretation in image and video content.</li>
+            <li><strong>Predictive modeling:</strong> Demand, risk, and behavior forecasting with SageMaker or Azure ML.</li>
+          </ul>
+
+          <h3>4. Automated Data Quality and Governance 🔐</h3>
+          <ul class="detail-list compact-list">
+            <li><strong>Anomaly detection:</strong> Identify unusual data patterns, drift, and integrity issues automatically.</li>
+            <li><strong>Policy enforcement:</strong> Apply fine-grained access controls via Apache Ranger or AWS IAM.</li>
+          </ul>
+
+          <h3>5. AI-Driven Insights and Visualization 📊</h3>
+          <ul class="detail-list compact-list">
+            <li><strong>Visual dashboards:</strong> Power BI and Tableau can surface trend shifts, outliers, and decision-ready metrics.</li>
+            <li><strong>Conversational analytics:</strong> Natural-language query interfaces improve non-technical adoption.</li>
+          </ul>
+
+          <h3>6. Intelligent Orchestration and Monitoring 🔄</h3>
+          <ul class="detail-list compact-list">
+            <li><strong>Smart scheduling:</strong> AI-guided workflow engines optimize compute and job timing.</li>
+            <li><strong>Monitoring stack:</strong> Prometheus, Grafana, and ELK with anomaly detection for rapid issue prevention.</li>
+          </ul>
+
+          <h3>Code Examples (Python, Terraform, CLI) 💻</h3>
+          <p>The examples below illustrate ingestion, sentiment processing, infrastructure setup, and deployment flow.</p>
+
+          <h3>1. Ingestion and Processing Example (AWS Lambda - Python)</h3>
+          <pre><code class="language-python">import boto3
+import json
+
+# Set up clients for Kinesis and Comprehend
+kinesis_client = boto3.client('kinesis')
+comprehend_client = boto3.client('comprehend')
+
+def lambda_handler(event, context):
+    records = event['Records']
+
+    for record in records:
+        # Decode the data from Kinesis
+        payload = json.loads(record['kinesis']['data'])
+        text = payload.get('text')
+
+        if text:
+            # Process text with Amazon Comprehend
+            sentiment = comprehend_client.detect_sentiment(Text=text, LanguageCode='en')
+            print(f"Sentiment for text '{text}': {sentiment['Sentiment']}")
+
+            # Here you could send the result to a data lake or database
+            save_to_s3(text, sentiment)
+
+    return {'statusCode': 200, 'body': json.dumps('Processing completed')}
+
+def save_to_s3(text, sentiment):
+    s3 = boto3.client('s3')
+    result = {
+        'text': text,
+        'sentiment': sentiment['Sentiment']
+    }
+    s3.put_object(
+        Bucket='your-s3-bucket',
+        Key=f"sentiment_results/{hash(text)}.json",
+        Body=json.dumps(result)
+    )
+</code></pre>
+
+          <h3>2. Terraform Variables (variables.tf)</h3>
+          <pre><code class="language-hcl">variable "aws_region" {
+  default = "us-east-1"
+}
+
+variable "s3_bucket_name" {
+  description = "The name of the S3 bucket"
+  default     = "your-s3-bucket"
+}
+
+variable "kinesis_stream_name" {
+  description = "Name of the Kinesis stream for data ingestion"
+  default     = "data-ingestion-stream"
+}
+</code></pre>
+
+          <h3>3. Terraform Main Script (main.tf)</h3>
+          <pre><code class="language-hcl">provider "aws" {
+  region = var.aws_region
+}
+
+resource "aws_s3_bucket" "data_bucket" {
+  bucket = var.s3_bucket_name
+}
+
+resource "aws_kinesis_stream" "data_stream" {
+  name             = var.kinesis_stream_name
+  shard_count      = 1
+  retention_period = 24
+}
+
+resource "aws_iam_role" "lambda_role" {
+  name = "lambda_execution_role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Action = "sts:AssumeRole",
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        },
+        Effect = "Allow",
+        Sid    = ""
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy" "lambda_policy" {
+  name   = "lambda_policy"
+  role   = aws_iam_role.lambda_role.id
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect = "Allow",
+        Action = [
+          "kinesis:GetRecords",
+          "kinesis:GetShardIterator",
+          "kinesis:DescribeStream",
+          "kinesis:ListStreams"
+        ],
+        Resource = aws_kinesis_stream.data_stream.arn
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "comprehend:DetectSentiment"
+        ],
+        Resource = "*"
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "s3:PutObject"
+        ],
+        Resource = "${aws_s3_bucket.data_bucket.arn}/*"
+      }
+    ]
+  })
+}
+
+resource "aws_lambda_function" "process_data" {
+  filename         = "lambda_function.zip"
+  function_name    = "process_data_lambda"
+  role             = aws_iam_role.lambda_role.arn
+  handler          = "lambda_function.lambda_handler"
+  runtime          = "python3.8"
+
+  environment {
+    variables = {
+      S3_BUCKET_NAME = var.s3_bucket_name
+    }
+  }
+}
+
+resource "aws_lambda_event_source_mapping" "kinesis_trigger" {
+  event_source_arn  = aws_kinesis_stream.data_stream.arn
+  function_name     = aws_lambda_function.process_data.arn
+  starting_position = "LATEST"
+}
+</code></pre>
+
+          <h3>4. Terraform Outputs (outputs.tf)</h3>
+          <pre><code class="language-hcl">output "s3_bucket_name" {
+  value = aws_s3_bucket.data_bucket.bucket
+}
+
+output "kinesis_stream_name" {
+  value = aws_kinesis_stream.data_stream.name
+}
+
+output "lambda_function_name" {
+  value = aws_lambda_function.process_data.function_name
+}
+</code></pre>
+
+          <h3>5. Deployment Commands</h3>
+          <pre><code class="language-bash">zip -r lambda_function.zip lambda_function.py
+terraform init
+terraform apply
+</code></pre>
+
+          <h3>6. Example Automated Pipeline Workflow 🧩</h3>
+          <ul class="detail-list compact-list">
+            <li><strong>Ingestion:</strong> Social feeds and operational streams enter the system with AI filtering.</li>
+            <li><strong>Storage:</strong> AI tags images and content with semantic metadata.</li>
+            <li><strong>Processing:</strong> NLP summarizes sentiment and topic trends.</li>
+            <li><strong>Governance:</strong> Drift and anomalies trigger quality notifications.</li>
+            <li><strong>Visualization:</strong> Dashboards refresh continuously for decision support.</li>
+          </ul>
+
+          <h3>Conclusion ✅</h3>
+          <p>
+            AI automation across ingestion, storage, processing, governance, and analytics transforms unstructured data
+            into searchable, reliable, and actionable intelligence. This architecture supports faster decisions,
+            lower manual overhead, and improved adaptability in data-rich environments.
+          </p>
+        </article>
+
+        <div class="articles-footer-nav">
+          <a class="text-link" href="index.html">View all articles</a>
+          <a class="text-link" href="aws-bedrock-ai-etl.html">← Previous article (4)</a>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../script.js"></script>
+</html>

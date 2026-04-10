@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Evolution of LLM Grounding by Mohamed Abbas Moynudeen."
+    />
+    <title>The Evolution of LLM Grounding | Mohamed Abbas Moynudeen</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-nav="articles">
+    <div class="site-bg" aria-hidden="true">
+      <div class="site-orb orb-one"></div>
+      <div class="site-orb orb-two"></div>
+      <div class="site-orb orb-three"></div>
+      <div class="site-grid"></div>
+      <div class="site-beam beam-one"></div>
+      <div class="site-beam beam-two"></div>
+    </div>
+
+    <header class="site-header shell">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">MA</span>
+        <span class="brand-copy">
+          <strong>Mohamed Abbas</strong>
+          <span>Principal Engineer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="../projects/index.html" data-nav="projects">Projects</a>
+        <a href="index.html" data-nav="articles">Articles</a>
+        <a href="../Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="https://www.linkedin.com/in/abbas-md/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main class="shell page-top-gap">
+      <section class="page-hero reveal">
+        <p class="eyebrow">Published article 📝</p>
+        <h1 class="page-title">The Evolution of LLM Grounding: RAG, CAG, and KAG Explained 🧭</h1>
+        <p class="page-summary">Mohamed Abbas Moynudeen | November 26, 2025</p>
+        <div class="articles-pagination" aria-label="Article pages">
+          <a class="page-chip" href="neurosymbolic-ai-data-industry.html" aria-label="Open article page 1">1</a>
+          <span class="page-chip page-chip-active" aria-current="page">2</span>
+          <a class="page-chip" href="ai-powered-log-analysis-legacy-systems.html" aria-label="Open article page 3">3</a>
+          <a class="page-chip" href="aws-bedrock-ai-etl.html" aria-label="Open article page 4">4</a>
+          <a class="page-chip" href="automating-unstructured-data-processing-ai-services.html" aria-label="Open article page 5">5</a>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <article class="content-block glass-panel">
+          <p>
+            In the rapidly evolving landscape of large language models, ensuring responses are accurate, current, and
+            relevant is essential. Three major grounding patterns have emerged to solve this challenge: retrieval-
+            augmented generation, cache-augmented generation, and knowledge-augmented generation.
+          </p>
+
+          <h3>1. Retrieval-Augmented Generation: The Research Librarian 📚</h3>
+          <p>
+            Retrieval-augmented generation is the most widely adopted approach for connecting LLMs to external data.
+            A query is embedded, relevant chunks are retrieved from a vector database, and those chunks are injected
+            into the prompt before generation.
+          </p>
+          <ul class="detail-list compact-list">
+            <li><strong>How it works:</strong> Query encoding, retrieval, context augmentation, and answer generation.</li>
+            <li><strong>Best for:</strong> Large dynamic datasets such as enterprise docs, news streams, and research corpora.</li>
+            <li><strong>Limitations:</strong> Added latency and heavy dependency on retrieval quality.</li>
+          </ul>
+
+          <h3>2. Cache-Augmented Generation: The Open Textbook ⚡</h3>
+          <p>
+            Cache-augmented generation prioritizes speed and consistency by pre-loading external content into active
+            model context and reusing key-value cache state for rapid answering.
+          </p>
+          <ul class="detail-list compact-list">
+            <li><strong>How it works:</strong> Pre-load data, persist KV cache, then generate answers instantly.</li>
+            <li><strong>Best for:</strong> Static medium-sized corpora with high query frequency and strict latency targets.</li>
+            <li><strong>Limitations:</strong> Constrained by context window size and less flexible for rapidly changing data.</li>
+          </ul>
+
+          <h3>3. Knowledge-Augmented Generation: The Subject Matter Analyst 🧠</h3>
+          <p>
+            Knowledge-augmented generation uses structured knowledge graphs where entities and relationships are modeled
+            explicitly, enabling multi-hop reasoning with high factual precision.
+          </p>
+          <ul class="detail-list compact-list">
+            <li><strong>How it works:</strong> Build graph structures, reason through relationships, provide precise context.</li>
+            <li><strong>Best for:</strong> Medical, legal, scientific, financial, and supply chain domains requiring strong integrity.</li>
+            <li><strong>Limitations:</strong> Complex data modeling and maintenance overhead.</li>
+          </ul>
+
+          <h3>4. Architecture Selection Guidance 🎯</h3>
+          <ul class="detail-list compact-list">
+            <li>Choose RAG when freshness and broad retrieval are essential.</li>
+            <li>Choose CAG when speed and deterministic response behavior are top priorities.</li>
+            <li>Choose KAG when relational reasoning and explainability are critical.</li>
+          </ul>
+
+          <h3>5. Practical Conclusion ✅</h3>
+          <p>
+            There is no universal winner among RAG, CAG, and KAG. The right pattern depends on data volatility,
+            latency constraints, explainability requirements, and implementation complexity. Hybrid architectures can
+            combine the strengths of all three for production-grade systems.
+          </p>
+        </article>
+
+        <div class="articles-footer-nav">
+          <a class="text-link" href="index.html">View all articles</a>
+          <a class="text-link" href="neurosymbolic-ai-data-industry.html">← Previous article (1)</a>
+          <a class="text-link" href="ai-powered-log-analysis-legacy-systems.html">Next article (3) →</a>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="../script.js"></script>
+</html>
