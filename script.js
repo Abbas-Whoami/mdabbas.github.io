@@ -6,6 +6,9 @@ const bookingForm = document.querySelector('[data-whatsapp-booking-form]');
 const projectCarousel = document.querySelector('[data-project-carousel]');
 const articleCarousel = document.querySelector('[data-article-carousel]');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const magneticTargets = document.querySelectorAll('.button, .carousel-button');
+const energyCards = document.querySelectorAll('.project-preview, .feature-card, .capability-card, .content-block, .fact-panel, .step-card, .flow-node');
+const sceneSections = document.querySelectorAll('main .section, main .page-hero, main .project-layout, main .content-block');
 
 if (!prefersReducedMotion) {
   const fxStage = document.createElement('div');
@@ -125,6 +128,75 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach((element) => revealObserver.observe(element));
 } else {
   revealElements.forEach((element) => element.classList.add('reveal-visible'));
+}
+
+if (!prefersReducedMotion && 'IntersectionObserver' in window && sceneSections.length) {
+  const sceneObserver = new IntersectionObserver(
+    (entries) => {
+      const activeEntry = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!activeEntry) {
+        return;
+      }
+
+      const sceneIndex = Number(activeEntry.target.getAttribute('data-scene-index'));
+      if (Number.isInteger(sceneIndex)) {
+        document.body.dataset.scene = `scene-${sceneIndex % 4}`;
+      }
+    },
+    {
+      threshold: [0.25, 0.45, 0.7],
+      rootMargin: '-8% 0px -30% 0px',
+    }
+  );
+
+  sceneSections.forEach((section, index) => {
+    section.setAttribute('data-scene-index', String(index));
+    sceneObserver.observe(section);
+  });
+}
+
+if (!prefersReducedMotion && magneticTargets.length) {
+  magneticTargets.forEach((target) => {
+    target.addEventListener('pointermove', (event) => {
+      const rect = target.getBoundingClientRect();
+      const localX = event.clientX - rect.left;
+      const localY = event.clientY - rect.top;
+      const shiftX = (localX - rect.width / 2) * 0.08;
+      const shiftY = (localY - rect.height / 2) * 0.12;
+      target.style.transform = `translate3d(${shiftX}px, ${shiftY - 2}px, 0) scale(1.02)`;
+    });
+
+    const resetTransform = () => {
+      target.style.removeProperty('transform');
+    };
+
+    target.addEventListener('pointerleave', resetTransform);
+    target.addEventListener('blur', resetTransform);
+  });
+}
+
+if (!prefersReducedMotion && energyCards.length) {
+  energyCards.forEach((card) => {
+    card.addEventListener('pointerenter', (event) => {
+      if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') {
+        return;
+      }
+
+      const rect = card.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const angle = Math.atan2(event.clientY - centerY, event.clientX - centerX) * (180 / Math.PI);
+
+      const trail = document.createElement('span');
+      trail.className = 'fx-energy-trail';
+      trail.style.setProperty('--trail-rot', `${angle}deg`);
+      card.appendChild(trail);
+      trail.addEventListener('animationend', () => trail.remove(), { once: true });
+    });
+  });
 }
 
 if (profileImage) {

@@ -31,7 +31,34 @@ body {
   color: var(--text);
   --pointer-x: 50vw;
   --pointer-y: 20vh;
+  --scene-hue: 0deg;
+  --scene-sat: 1;
+  --scene-glow: 0.85;
   background: linear-gradient(180deg, #ffffff 0%, var(--bg) 54%, var(--bg-soft) 100%);
+}
+
+body[data-scene="scene-0"] {
+  --scene-hue: 0deg;
+  --scene-sat: 1;
+  --scene-glow: 0.82;
+}
+
+body[data-scene="scene-1"] {
+  --scene-hue: 16deg;
+  --scene-sat: 1.12;
+  --scene-glow: 0.9;
+}
+
+body[data-scene="scene-2"] {
+  --scene-hue: -13deg;
+  --scene-sat: 1.1;
+  --scene-glow: 0.88;
+}
+
+body[data-scene="scene-3"] {
+  --scene-hue: 28deg;
+  --scene-sat: 1.18;
+  --scene-glow: 0.94;
 }
 
 body::before {
@@ -43,8 +70,9 @@ body::before {
   background:
     radial-gradient(34rem 34rem at var(--pointer-x) var(--pointer-y), rgba(15, 140, 125, 0.2), transparent 62%),
     radial-gradient(28rem 28rem at calc(var(--pointer-x) + 14rem) calc(var(--pointer-y) - 12rem), rgba(238, 135, 86, 0.16), transparent 66%);
-  opacity: 0.85;
+  opacity: var(--scene-glow);
   animation: spotlightDrift 12s ease-in-out infinite;
+  transition: opacity 560ms ease;
 }
 
 body::after {
@@ -68,6 +96,8 @@ body.fx-action-active::after {
   overflow: hidden;
   pointer-events: none;
   z-index: -1;
+  filter: hue-rotate(var(--scene-hue)) saturate(var(--scene-sat));
+  transition: filter 820ms ease;
 }
 
 .fx-ribbon {
@@ -405,6 +435,7 @@ p {
   border-radius: 999px;
   font-weight: 700;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  will-change: transform;
 }
 
 .button:hover,
@@ -705,6 +736,30 @@ p {
 .content-block,
 .fact-panel {
   padding: 1.45rem;
+}
+
+.feature-card,
+.project-preview,
+.capability-card,
+.content-block,
+.fact-panel,
+.step-card,
+.flow-node {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fx-energy-trail {
+  position: absolute;
+  inset: -55% -35%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), rgba(194, 255, 241, 0.72), rgba(255, 202, 172, 0.66), transparent);
+  transform: rotate(var(--trail-rot, 18deg)) translateX(-145%);
+  opacity: 0;
+  mix-blend-mode: screen;
+  filter: blur(2px);
+  animation: energyTrailSweep 760ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 .project-preview {
@@ -1023,6 +1078,22 @@ p {
   }
 }
 
+@keyframes energyTrailSweep {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--trail-rot, 18deg)) translateX(-145%);
+  }
+
+  20% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(var(--trail-rot, 18deg)) translateX(140%);
+  }
+}
+
 @media (max-width: 1040px) {
   .hero,
   .project-layout,
@@ -1144,6 +1215,7 @@ p {
   .site-beam,
   .fx-ribbon,
   .fx-progress-bar,
+  .fx-energy-trail,
   .reveal,
   .button,
   .project-preview,
