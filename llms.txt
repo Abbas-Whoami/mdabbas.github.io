@@ -1,0 +1,35 @@
+# Mohamed Abbas Moynudeen | AI Consulting and Engineering
+
+This site presents Mohamed Abbas Moynudeen's work across AI consulting, freelancing services, and enterprise engineering delivery. The content is intended for corporates, enterprises, and technology teams seeking architecture guidance, implementation support, and technical leadership.
+
+## Primary pages
+- https://mdabbas.com/
+- https://mdabbas.com/projects/
+- https://mdabbas.com/articles/
+- https://mdabbas.com/lab/
+
+## Services and consulting focus
+- AI consulting for enterprise use cases
+- LLM and RAG architecture design
+- Cloud and data engineering consulting
+- ETL and platform strategy
+- Technical and architecture discussions
+- Engineering leadership mentoring
+
+## Audience
+- Corporates and enterprises
+- Product and engineering leaders
+- Teams modernizing AI/data platforms
+
+## Content sections
+- Projects: enterprise delivery case studies and architecture outcomes
+- Articles: technical and consulting insights on AI/LLM/data/cloud
+- Lab: future AI product concepts and venture directions
+
+## Booking
+- Consultation booking available via homepage section (IST timezone)
+- Booking page anchor: https://mdabbas.com/#book-services
+
+## Author
+- Name: Mohamed Abbas Moynudeen
+- LinkedIn: https://www.linkedin.com/in/abbas-md/

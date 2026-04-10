@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Keep attached planning decks out of search index
+Disallow: /future%20works/
+
+Sitemap: https://mdabbas.com/sitemap.xml
