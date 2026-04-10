@@ -1311,6 +1311,130 @@ p {
   border-left: 3px solid var(--accent);
 }
 
+/* ── Footer ────────────────────────────────────────────── */
+
+.site-footer {
+  margin-top: 4.8rem;
+  padding: 3.2rem 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg-soft);
+  font-size: 0.93rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.4rem;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-brand {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.footer-credit {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-email {
+  margin: 0;
+}
+
+.footer-email a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.footer-email a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-social a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.footer-social a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  padding: 1.6rem 1.5rem 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-copyright {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    margin-top: 3.2rem;
+    padding: 2.4rem 0;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .footer-links,
+  .footer-social {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
 /* ── Reduced motion ─────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
