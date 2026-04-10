@@ -292,24 +292,103 @@ if (!prefersReducedMotion && energyCards.length) {
 }
 
 if (profileImage) {
-  const profileCandidates = ['IMG/profile.png', 'IMG/profile.jpg'];
+  const profileCandidates = ['IMG/profile.jpeg', 'IMG/profile1.jpeg', 'IMG/profile.png', 'IMG/profile.jpg'];
+  const availableProfiles = [];
+  let checkedProfiles = 0;
+  let activeProfileIndex = 0;
+  let profileSlideInterval;
 
-  const tryProfileImage = (index) => {
-    if (index >= profileCandidates.length) {
+  const updateProfileDots = (dots) => {
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('profile-dot-active', dotIndex === activeProfileIndex);
+      dot.setAttribute('aria-label', `Go to profile image ${dotIndex + 1}`);
+    });
+  };
+
+  const renderProfileImage = (nextIndex, dots) => {
+    if (!availableProfiles.length) {
       return;
     }
 
-    const probe = new Image();
-    probe.onload = () => {
-      profileImage.src = profileCandidates[index];
-    };
-    probe.onerror = () => {
-      tryProfileImage(index + 1);
-    };
-    probe.src = profileCandidates[index];
+    activeProfileIndex = (nextIndex + availableProfiles.length) % availableProfiles.length;
+    profileImage.classList.add('profile-image-fade');
+
+    window.setTimeout(() => {
+      profileImage.src = availableProfiles[activeProfileIndex];
+      profileImage.classList.remove('profile-image-fade');
+      updateProfileDots(dots);
+    }, 180);
   };
 
-  tryProfileImage(0);
+  const startProfileCarousel = () => {
+    if (!availableProfiles.length) {
+      profileImage.src = 'IMG/profile-placeholder.svg';
+      return;
+    }
+
+    profileImage.src = availableProfiles[0];
+
+    if (availableProfiles.length < 2 || prefersReducedMotion) {
+      return;
+    }
+
+    const portraitFrame = profileImage.closest('.portrait-frame');
+    if (!portraitFrame) {
+      return;
+    }
+
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'profile-carousel-dots';
+    const dots = availableProfiles.map((_, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'profile-dot';
+      dot.addEventListener('click', () => {
+        renderProfileImage(index, dots);
+      });
+      dotsContainer.appendChild(dot);
+      return dot;
+    });
+
+    portraitFrame.appendChild(dotsContainer);
+    updateProfileDots(dots);
+
+    profileSlideInterval = window.setInterval(() => {
+      renderProfileImage(activeProfileIndex + 1, dots);
+    }, 3500);
+
+    portraitFrame.addEventListener('mouseenter', () => {
+      if (profileSlideInterval) {
+        clearInterval(profileSlideInterval);
+      }
+    });
+
+    portraitFrame.addEventListener('mouseleave', () => {
+      profileSlideInterval = window.setInterval(() => {
+        renderProfileImage(activeProfileIndex + 1, dots);
+      }, 3500);
+    });
+  };
+
+  profileCandidates.forEach((candidate) => {
+    const probe = new Image();
+    probe.onload = () => {
+      availableProfiles.push(candidate);
+      checkedProfiles += 1;
+      if (checkedProfiles === profileCandidates.length) {
+        startProfileCarousel();
+      }
+    };
+
+    probe.onerror = () => {
+      checkedProfiles += 1;
+      if (checkedProfiles === profileCandidates.length) {
+        startProfileCarousel();
+      }
+    };
+
+    probe.src = candidate;
+  });
 }
 
 if (bookingForm) {

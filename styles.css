@@ -584,6 +584,37 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 220ms ease;
+}
+
+.portrait-frame img.profile-image-fade {
+  opacity: 0.2;
+}
+
+.profile-carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0.8rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  gap: 0.45rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(10, 16, 26, 0.38);
+  backdrop-filter: blur(4px);
+}
+
+.profile-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+}
+
+.profile-dot.profile-dot-active {
+  background: #ffffff;
 }
 
 .portrait-note {
