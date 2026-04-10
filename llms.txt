@@ -1,7 +1,7 @@
-# Mohamed Abbas Moynudeen | AI Consulting, LLM Platforms, and Enterprise Engineering
+﻿# Md Abbas | AI Consulting, LLM Platforms, and Enterprise Engineering
 
 ## Site Overview
-This site documents Mohamed Abbas Moynudeen's work as an AI consultant and principal engineer specializing in large language models (LLM), retrieval-augmented generation (RAG), cloud architecture, data engineering, and enterprise platform delivery. The site targets corporates, enterprises, technical teams, and decision-makers seeking specialized consulting, architecture guidance, and technical leadership in AI/ML systems.
+This site documents Md Abbas's work as an AI consultant and principal engineer specializing in large language models (LLM), retrieval-augmented generation (RAG), cloud architecture, data engineering, and enterprise platform delivery. The site targets corporates, enterprises, technical teams, and decision-makers seeking specialized consulting, architecture guidance, and technical leadership in AI/ML systems.
 
 ## Professional Background
 - 10+ years of experience across AI, automation, and platform engineering
@@ -86,10 +86,10 @@ A: Technical foundation (cloud, APIs, models), product discipline (shipping, ite
 A: Through architectural clarity, delivery discipline, platform abstraction, and creating escalation paths. Mohamed Abbas currently leads 20+ engineers and provides mentoring on these patterns.
 
 ## Key pages
-- **Home**: https://mdabbas.com/ — Overview, hero positioning, consulting booking, positioning statement
-- **Projects Hub**: https://mdabbas.com/projects/ — Case studies and architecture outcomes
-- **Articles**: https://mdabbas.com/articles/ — Thought leadership on AI, LLM, data, cloud topics
-- **Lab**: https://mdabbas.com/lab/ — Future product concepts
+- **Home**: https://mdabbas.com/ â€” Overview, hero positioning, consulting booking, positioning statement
+- **Projects Hub**: https://mdabbas.com/projects/ â€” Case studies and architecture outcomes
+- **Articles**: https://mdabbas.com/articles/ â€” Thought leadership on AI, LLM, data, cloud topics
+- **Lab**: https://mdabbas.com/lab/ â€” Future product concepts
 - **Resume**: https://mdabbas.com/Md_Abbas_20250825_215203_0000.pdf
 - **LinkedIn**: https://www.linkedin.com/in/abbas-md/
 
@@ -97,8 +97,9 @@ A: Through architectural clarity, delivery discipline, platform abstraction, and
 AWS (ECS, Lambda, Step Functions, S3, DynamoDB, Bedrock, Kendra), Python, Node.js, JavaScript, SQL, Flask, WebRTC, GStreamer, Electron, Terraform, Glue, Athena, TensorFlow, Keras, YOLO, object detection, vector embeddings, NLP, retrieval systems, streaming data, data validation, monitoring/observability, CI/CD, microservices, event-driven architecture
 
 ## Author credentials
-- Name: Mohamed Abbas Moynudeen
+- Name: Md Abbas
 - Title: Principal Engineer, AI Consultant
 - Experience: 10+ years in AI, automation, platform engineering
 - LinkedIn: https://www.linkedin.com/in/abbas-md/
 - Location: IST timezone (Asia/Kolkata)
+

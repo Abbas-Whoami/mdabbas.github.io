@@ -1,8 +1,8 @@
-/* HUMANS.TXT */
+﻿/* HUMANS.TXT */
 /* Mohamed Abbas AI Consulting - Site Team and Credentials */
 
 /* TEAM */
-Name: Mohamed Abbas Moynudeen
+Name: Md Abbas
 Title: Principal Engineer, AI Consultant
 Role: Founder
 Email: Contact via LinkedIn
@@ -49,3 +49,4 @@ Analytics: Privacy-first observability
 
 /* LAST UPDATED */
 Last Update: April 2026
+

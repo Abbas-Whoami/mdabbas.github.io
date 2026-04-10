@@ -1,6 +1,6 @@
-# mdabbas-profile
+﻿# mdabbas-profile
 
-Static multi-page portfolio site for Mohamed Abbas Moynudeen, built for GitHub Pages deployment.
+Static multi-page portfolio site for Md Abbas, built for GitHub Pages deployment.
 
 ## Local preview
 
@@ -29,3 +29,4 @@ Then visit `http://localhost:8000`.
 - `script.js` - reveal animations and page-level navigation state
 - `IMG/` - place `profile.jpg` or `profile.png` here for the hero portrait
 - `Md_Abbas_20250825_215203_0000.pdf` - downloadable resume
+
