@@ -57,7 +57,7 @@ Six AI product concepts in active design and planning:
 - SkillForge AI: Personalized learning and skill development platform (LLM/Recommendation)
 
 ## Consulting service details
-- **Format**: 30-minute consultation sessions at $10
+- **Format**: 30-minute consultation sessions at $5
 - **Booking**: Available via homepage section; IST (Asia/Kolkata) timezone
 - **Scope**: Architecture reviews, technical discussions, strategy sessions, mentoring, team guidance
 - **Client types**: Corporates, enterprises, startups, consulting firms, engineering teams
@@ -86,10 +86,10 @@ A: Technical foundation (cloud, APIs, models), product discipline (shipping, ite
 A: Through architectural clarity, delivery discipline, platform abstraction, and creating escalation paths. Mohamed Abbas currently leads 20+ engineers and provides mentoring on these patterns.
 
 ## Key pages
-- **Home**: https://mdabbas.com/ â€” Overview, hero positioning, consulting booking, positioning statement
-- **Projects Hub**: https://mdabbas.com/projects/ â€” Case studies and architecture outcomes
-- **Articles**: https://mdabbas.com/articles/ â€” Thought leadership on AI, LLM, data, cloud topics
-- **Lab**: https://mdabbas.com/lab/ â€” Future product concepts
+- **Home**: https://mdabbas.com/ — Overview, hero positioning, consulting booking, positioning statement
+- **Projects Hub**: https://mdabbas.com/projects/ — Case studies and architecture outcomes
+- **Articles**: https://mdabbas.com/articles/ — Thought leadership on AI, LLM, data, cloud topics
+- **Lab**: https://mdabbas.com/lab/ — Future product concepts
 - **Resume**: https://mdabbas.com/Md_Abbas_20250825_215203_0000.pdf
 - **LinkedIn**: https://www.linkedin.com/in/abbas-md/
 
@@ -102,4 +102,5 @@ AWS (ECS, Lambda, Step Functions, S3, DynamoDB, Bedrock, Kendra), Python, Node.j
 - Experience: 10+ years in AI, automation, platform engineering
 - LinkedIn: https://www.linkedin.com/in/abbas-md/
 - Location: IST timezone (Asia/Kolkata)
+
 

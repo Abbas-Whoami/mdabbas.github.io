@@ -39,7 +39,7 @@ Lab Concepts: https://mdabbas.com/lab/
 /* CONTACT */
 Consultation Booking: https://mdabbas.com/#book-services
 Timezone: IST (Asia/Kolkata)
-Rate: $10 for 30-minute consultation
+Rate: $5 for 30-minute consultation
 
 /* SITE CREDITS */
 Built with: HTML5, CSS3, JavaScript

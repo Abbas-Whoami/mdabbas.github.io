@@ -1,4 +1,4 @@
-const revealElements = document.querySelectorAll('.reveal');
+﻿const revealElements = document.querySelectorAll('.reveal');
 const navLinks = document.querySelectorAll('[data-nav]');
 const pageNav = document.body.dataset.nav;
 const profileImage = document.querySelector('[data-profile-image]');
