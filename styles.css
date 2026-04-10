@@ -29,7 +29,116 @@ body {
   min-height: 100vh;
   font-family: "Manrope", sans-serif;
   color: var(--text);
+  --pointer-x: 50vw;
+  --pointer-y: 20vh;
   background: linear-gradient(180deg, #ffffff 0%, var(--bg) 54%, var(--bg-soft) 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -28vmax;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(34rem 34rem at var(--pointer-x) var(--pointer-y), rgba(15, 140, 125, 0.2), transparent 62%),
+    radial-gradient(28rem 28rem at calc(var(--pointer-x) + 14rem) calc(var(--pointer-y) - 12rem), rgba(238, 135, 86, 0.16), transparent 66%);
+  opacity: 0.85;
+  animation: spotlightDrift 12s ease-in-out infinite;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: -26vmax;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(24rem 24rem at var(--action-x, 50vw) var(--action-y, 50vh), rgba(255, 255, 255, 0.3), transparent 62%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+body.fx-action-active::after {
+  opacity: 0.8;
+}
+
+.fx-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.fx-ribbon {
+  position: absolute;
+  width: 58vmax;
+  height: 58vmax;
+  border-radius: 45% 55% 59% 41% / 52% 46% 54% 48%;
+  filter: blur(46px);
+  opacity: 0.26;
+  animation: ribbonFloat 22s ease-in-out infinite;
+}
+
+.fx-ribbon-a {
+  left: -18vmax;
+  top: -14vmax;
+  background: linear-gradient(135deg, rgba(15, 140, 125, 0.4), rgba(111, 224, 196, 0.3));
+}
+
+.fx-ribbon-b {
+  right: -15vmax;
+  top: 18vh;
+  background: linear-gradient(135deg, rgba(238, 135, 86, 0.34), rgba(255, 196, 168, 0.24));
+  animation-delay: -8s;
+}
+
+.fx-ribbon-c {
+  left: 20vw;
+  bottom: -24vmax;
+  background: linear-gradient(135deg, rgba(12, 97, 88, 0.34), rgba(227, 247, 241, 0.26));
+  animation-delay: -13s;
+}
+
+.fx-stage-burst .fx-ribbon {
+  animation-duration: 12s;
+}
+
+.fx-action-pulse {
+  position: absolute;
+  width: var(--pulse-size, 13rem);
+  height: var(--pulse-size, 13rem);
+  left: calc(var(--pulse-x, 50vw) - (var(--pulse-size, 13rem) * 0.5));
+  top: calc(var(--pulse-y, 50vh) - (var(--pulse-size, 13rem) * 0.5));
+  border-radius: 999px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1) 35%, transparent 68%),
+    radial-gradient(circle at 30% 30%, rgba(15, 140, 125, 0.42), transparent 65%),
+    radial-gradient(circle at 72% 68%, rgba(238, 135, 86, 0.34), transparent 68%);
+  mix-blend-mode: screen;
+  filter: blur(2px);
+  opacity: 0;
+  animation: actionPulse 860ms cubic-bezier(0.2, 0.65, 0.2, 1) forwards;
+}
+
+.fx-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.fx-progress-bar {
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--accent), var(--signal), #ffd7b7);
+  box-shadow: 0 0 28px rgba(15, 140, 125, 0.45);
 }
 
 a {
@@ -876,6 +985,44 @@ p {
   }
 }
 
+@keyframes ribbonFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translate3d(4vw, -5vh, 0) rotate(14deg) scale(1.12);
+  }
+}
+
+@keyframes spotlightDrift {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 0.96;
+  }
+}
+
+@keyframes actionPulse {
+  0% {
+    transform: scale(0.35);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
 @media (max-width: 1040px) {
   .hero,
   .project-layout,
@@ -995,6 +1142,8 @@ p {
 
   .site-orb,
   .site-beam,
+  .fx-ribbon,
+  .fx-progress-bar,
   .reveal,
   .button,
   .project-preview,
@@ -1010,5 +1159,12 @@ p {
 
   .reveal {
     opacity: 1;
+  }
+
+  body::before,
+  body::after,
+  .fx-stage,
+  .fx-progress {
+    display: none;
   }
 }

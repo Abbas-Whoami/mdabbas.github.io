@@ -5,6 +5,101 @@ const profileImage = document.querySelector('[data-profile-image]');
 const bookingForm = document.querySelector('[data-whatsapp-booking-form]');
 const projectCarousel = document.querySelector('[data-project-carousel]');
 const articleCarousel = document.querySelector('[data-article-carousel]');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!prefersReducedMotion) {
+  const fxStage = document.createElement('div');
+  fxStage.className = 'fx-stage';
+  fxStage.setAttribute('aria-hidden', 'true');
+  fxStage.innerHTML = `
+    <span class="fx-ribbon fx-ribbon-a"></span>
+    <span class="fx-ribbon fx-ribbon-b"></span>
+    <span class="fx-ribbon fx-ribbon-c"></span>
+  `;
+  document.body.appendChild(fxStage);
+
+  const fxProgress = document.createElement('div');
+  fxProgress.className = 'fx-progress';
+  fxProgress.setAttribute('aria-hidden', 'true');
+  fxProgress.innerHTML = '<div class="fx-progress-bar" data-fx-progress></div>';
+  document.body.appendChild(fxProgress);
+
+  const progressBar = fxProgress.querySelector('[data-fx-progress]');
+
+  const updateScrollProgress = () => {
+    if (!progressBar) {
+      return;
+    }
+
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+    progressBar.style.transform = `scaleX(${progress})`;
+  };
+
+  const updatePointer = (x, y) => {
+    document.body.style.setProperty('--pointer-x', `${x}px`);
+    document.body.style.setProperty('--pointer-y', `${y}px`);
+  };
+
+  let burstResetTimer;
+  let actionResetTimer;
+
+  const triggerActionFx = (x, y, intensity = 1) => {
+    document.body.style.setProperty('--action-x', `${x}px`);
+    document.body.style.setProperty('--action-y', `${y}px`);
+    document.body.classList.add('fx-action-active');
+    fxStage.classList.add('fx-stage-burst');
+
+    const pulse = document.createElement('span');
+    pulse.className = 'fx-action-pulse';
+    pulse.style.setProperty('--pulse-x', `${x}px`);
+    pulse.style.setProperty('--pulse-y', `${y}px`);
+    pulse.style.setProperty('--pulse-size', `${Math.round(160 + Math.min(120, intensity * 90))}px`);
+    fxStage.appendChild(pulse);
+    pulse.addEventListener('animationend', () => pulse.remove(), { once: true });
+
+    clearTimeout(actionResetTimer);
+    clearTimeout(burstResetTimer);
+    actionResetTimer = setTimeout(() => {
+      document.body.classList.remove('fx-action-active');
+    }, 240);
+    burstResetTimer = setTimeout(() => {
+      fxStage.classList.remove('fx-stage-burst');
+    }, 420);
+  };
+
+  updatePointer(window.innerWidth * 0.5, window.innerHeight * 0.24);
+  updateScrollProgress();
+
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  window.addEventListener('resize', updateScrollProgress);
+
+  window.addEventListener('pointermove', (event) => {
+    if (event.pointerType === 'mouse' || event.pointerType === 'pen') {
+      updatePointer(event.clientX, event.clientY);
+    }
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    triggerActionFx(event.clientX, event.clientY, 1.15);
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') {
+      return;
+    }
+
+    const activeElement = document.activeElement;
+    if (!activeElement || !(activeElement instanceof HTMLElement)) {
+      return;
+    }
+
+    const rect = activeElement.getBoundingClientRect();
+    const x = rect.left + rect.width * 0.5;
+    const y = rect.top + rect.height * 0.5;
+    triggerActionFx(x, y, 1.3);
+  });
+}
 
 if (pageNav) {
   navLinks.forEach((link) => {
