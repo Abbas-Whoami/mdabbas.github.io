@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Recommendation Engine for E-Commerce project page for Mohamed Abbas Moynudeen — Apriori algorithm, deep learning with Keras/TensorFlow, and production deployment as team lead."
+    />
+    <title>Recommendation Engine for E-Commerce | Mohamed Abbas Moynudeen</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-nav="projects">
+    <div class="site-bg" aria-hidden="true">
+      <div class="site-orb orb-one"></div>
+      <div class="site-orb orb-two"></div>
+      <div class="site-orb orb-three"></div>
+      <div class="site-grid"></div>
+      <div class="site-beam beam-one"></div>
+      <div class="site-beam beam-two"></div>
+    </div>
+
+    <header class="site-header shell">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">MA</span>
+        <span class="brand-copy">
+          <strong>Mohamed Abbas</strong>
+          <span>Principal Engineer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="index.html" data-nav="projects">Projects</a>
+        <a href="../articles/index.html" data-nav="articles">Articles</a>
+        <a href="../lab/index.html" data-nav="lab">Lab</a>
+        <a href="../Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="https://www.linkedin.com/in/abbas-md/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main class="shell page-top-gap">
+      <section class="page-hero reveal">
+        <p class="eyebrow">2019 – 2021 | Solutionchamps Technologies</p>
+        <h1 class="page-title">Recommendation Engine for E-Commerce</h1>
+        <p class="page-summary">
+          A personalised recommendation engine for an e-commerce platform combining classical association rule
+          mining with deep learning to surface relevant products to each user. Led a six-member team as core
+          developer and integrator, delivering a production-ready system on time.
+        </p>
+      </section>
+
+      <section class="project-layout reveal">
+        <div class="project-main">
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Project context</p>
+            <h2 class="content-title">Why this project mattered</h2>
+            <p>
+              Generic product listings do not convert. The business need was a recommendation layer that could
+              surface products a given customer was genuinely likely to buy — based on purchase history,
+              browsing behaviour, and patterns across similar users. Without personalisation, product discovery
+              relied entirely on manual browsing, and conversion rates reflected it.
+            </p>
+            <p>
+              I led the engineering team as core developer and integrator across a six-member team, responsible
+              for the recommendation logic design, the deep learning integration, and the overall code quality
+              and delivery coordination under agile methodology.
+            </p>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">How I achieved it</p>
+            <h2 class="content-title">Execution approach</h2>
+            <div class="step-grid">
+              <div class="step-card">
+                <strong>01 Association rule mining</strong>
+                <p>Designed the core recommendation logic using the Apriori algorithm in TensorFlow — mining frequent itemsets from purchase history to surface co-bought and co-browsed product associations across the catalogue.</p>
+              </div>
+              <div class="step-card">
+                <strong>02 Deep learning integration</strong>
+                <p>Combined the Apriori-based association approach with deep learning models built in Keras and TensorFlow, enabling the system to incorporate user-level behavioural patterns and sequence information that classical methods could not capture alone.</p>
+              </div>
+              <div class="step-card">
+                <strong>03 Accuracy improvement</strong>
+                <p>Applied transfer learning techniques on top of the baseline model to improve recommendation relevance — fine-tuning on domain-specific purchase and session data to align outputs more closely with real user intent.</p>
+              </div>
+              <div class="step-card">
+                <strong>04 Production delivery</strong>
+                <p>Applied RPA techniques and agile practices to streamline the development and deployment workflow, reducing integration friction and enabling faster iteration between engineering and business validation cycles.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Architecture</p>
+            <h2 class="content-title">System design</h2>
+            <div class="architecture-flow">
+              <div class="flow-node">
+                <h3>Data layer</h3>
+                <p>Purchase history, browsing sessions, and product catalogue data ingested and preprocessed into user-item interaction matrices and transaction itemsets.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Association mining</h3>
+                <p>Apriori algorithm extracts frequent itemsets and generates confidence-ranked association rules — forming the baseline co-purchase recommendation signal.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Deep learning layer</h3>
+                <p>Keras and TensorFlow models learn user-level embeddings and sequential purchase patterns, augmenting the rule-based signal with personalised affinity scores.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Scoring and ranking</h3>
+                <p>Combined scores from association rules and deep learning predictions are ranked per user and filtered by inventory availability before serving.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Serving layer</h3>
+                <p>Ranked recommendations served via API to the e-commerce frontend, supporting both real-time personalised product grids and triggered recommendation emails.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Leadership</p>
+            <h2 class="content-title">Team lead and code integrator</h2>
+            <p>
+              As team lead and integrator across the six-member team, I coordinated sprint planning, maintained
+              the integration branch, and enforced code quality standards across the codebase. When critical
+              deployment issues arose at the production release stage, I resolved them directly and quickly —
+              an outcome that earned recognition from the wider team and project stakeholders for delivery
+              ownership and coordination under pressure.
+            </p>
+          </article>
+
+        </div>
+
+        <aside class="project-side reveal">
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Quick facts</p>
+            <ul class="fact-list">
+              <li><span>Role</span><strong>Team Lead and Deep Learning Engineer</strong></li>
+              <li><span>Team size</span><strong>6 members</strong></li>
+              <li><span>Methodology</span><strong>Agile sprint planning + RPA</strong></li>
+              <li><span>Core algorithm</span><strong>Apriori in TensorFlow</strong></li>
+              <li><span>DL framework</span><strong>Keras / TensorFlow</strong></li>
+            </ul>
+          </article>
+
+          <article class="fact-panel glass-panel accent-panel">
+            <p class="mini-label">Business effect</p>
+            <div class="impact-metric">
+              <strong>Production deployed</strong>
+              <span>personalised recommendation engine delivered end-to-end</span>
+            </div>
+            <div class="impact-metric">
+              <strong>Recognised</strong>
+              <span>for team coordination and fast resolution of critical deployment issues</span>
+            </div>
+          </article>
+
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Tech stack</p>
+            <ul class="fact-list">
+              <li><strong>TensorFlow</strong></li>
+              <li><strong>Keras</strong></li>
+              <li><strong>Apriori algorithm</strong></li>
+              <li><strong>Transfer learning</strong></li>
+              <li><strong>Python</strong></li>
+              <li><strong>RPA tooling</strong></li>
+            </ul>
+          </article>
+
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Explore next</p>
+            <div class="side-links">
+              <a href="rpa-product-development.html">RPA Product Development Platform</a>
+              <a href="receipt-parsing-ocr.html">Receipt Parsing with OCR</a>
+              <a href="dvr-ai-box.html">DVR AI BOX</a>
+              <a href="ai-asset-tracker.html">AI Asset Tracker</a>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

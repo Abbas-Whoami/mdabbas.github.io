@@ -394,6 +394,127 @@ p {
   max-width: 40ch;
 }
 
+.consult-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 1rem;
+}
+
+.consult-offer,
+.booking-form {
+  padding: 1.45rem;
+}
+
+.consult-offer h3,
+.booking-form h3 {
+  margin-bottom: 1rem;
+}
+
+.service-pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(12, 97, 88, 0.16);
+  background: rgba(223, 246, 239, 0.65);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.consult-note,
+.booking-note {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.form-field span {
+  font-size: 0.87rem;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.72rem 0.85rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(22, 48, 44, 0.15);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
+  font: inherit;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid rgba(15, 140, 125, 0.2);
+  border-color: rgba(15, 140, 125, 0.45);
+}
+
+.service-selector {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: none;
+}
+
+.service-selector legend {
+  margin-bottom: 0.55rem;
+  font-size: 0.87rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.service-check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.service-check-grid label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(22, 48, 44, 0.1);
+  background: rgba(255, 255, 255, 0.74);
+  font-size: 0.9rem;
+}
+
+.booking-status {
+  min-height: 1.2rem;
+  margin-top: 0.8rem;
+  color: var(--accent-strong);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
 .feature-grid,
 .project-preview-grid,
 .capability-grid,
@@ -401,6 +522,72 @@ p {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.article-carousel {
+  overflow: hidden;
+}
+
+.article-track {
+  display: flex;
+  transition: transform 380ms ease;
+  will-change: transform;
+}
+
+.article-slide {
+  min-width: 100%;
+}
+
+.article-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.carousel-button {
+  border: 1px solid rgba(22, 48, 44, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--accent-strong);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.55rem 0.95rem;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.carousel-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(17, 54, 48, 0.1);
+}
+
+.carousel-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.carousel-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.carousel-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(22, 48, 44, 0.25);
+  padding: 0;
+  cursor: pointer;
+}
+
+.carousel-dot-active {
+  background: var(--accent-strong);
 }
 
 .feature-card,
@@ -420,6 +607,27 @@ p {
 .project-preview:hover,
 .project-preview:focus-visible {
   color: inherit;
+}
+
+.project-preview:hover,
+.project-preview:focus-visible {
+  background: linear-gradient(145deg, rgba(12, 97, 88, 0.94), rgba(17, 86, 78, 0.92));
+  color: #f8fffd;
+  border-color: transparent;
+}
+
+.project-preview:hover h3,
+.project-preview:focus-visible h3 {
+  color: #f8fffd;
+}
+
+.project-preview:hover p,
+.project-preview:hover .project-kicker,
+.project-preview:hover .project-link,
+.project-preview:focus-visible p,
+.project-preview:focus-visible .project-kicker,
+.project-preview:focus-visible .project-link {
+  color: rgba(248, 255, 253, 0.84);
 }
 
 .highlight-preview {
@@ -445,9 +653,7 @@ p {
   font-weight: 700;
 }
 
-.project-preview:hover .project-link,
-.project-preview:visited .project-link,
-.project-preview:focus-visible .project-link {
+.project-preview:visited .project-link {
   color: var(--accent-strong);
 }
 
@@ -673,7 +879,8 @@ p {
 @media (max-width: 1040px) {
   .hero,
   .project-layout,
-  .split-heading {
+  .split-heading,
+  .consult-layout {
     grid-template-columns: 1fr;
   }
 
@@ -684,9 +891,12 @@ p {
   .signal-row,
   .feature-grid,
   .project-preview-grid,
+  .article-slide-grid,
   .capability-grid,
   .project-index-grid,
-  .step-grid {
+  .step-grid,
+  .booking-grid,
+  .service-check-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -718,6 +928,65 @@ p {
     font-size: 2.3rem;
   }
 }
+
+/* ── Lab section ─────────────────────────────────────────── */
+
+.lab-kicker {
+  color: var(--signal);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lab-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.lab-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border: 1px solid rgba(15, 140, 125, 0.2);
+}
+
+.lab-badge-planning {
+  background: var(--signal-soft);
+  color: #b85a28;
+  border-color: rgba(238, 135, 86, 0.25);
+}
+
+.lab-status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--signal-soft);
+  color: #b85a28;
+  border: 1px solid rgba(238, 135, 86, 0.25);
+  margin: 0;
+}
+
+.lab-tagline {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+/* ── Reduced motion ─────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DVR AI BOX project page for Mohamed Abbas Moynudeen — AI-powered video analytics and recording platform built on Nvidia Jetson."
+    />
+    <title>DVR AI BOX | Mohamed Abbas Moynudeen</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-nav="projects">
+    <div class="site-bg" aria-hidden="true">
+      <div class="site-orb orb-one"></div>
+      <div class="site-orb orb-two"></div>
+      <div class="site-orb orb-three"></div>
+      <div class="site-grid"></div>
+      <div class="site-beam beam-one"></div>
+      <div class="site-beam beam-two"></div>
+    </div>
+
+    <header class="site-header shell">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">MA</span>
+        <span class="brand-copy">
+          <strong>Mohamed Abbas</strong>
+          <span>Principal Engineer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="index.html" data-nav="projects">Projects</a>
+        <a href="../articles/index.html" data-nav="articles">Articles</a>
+        <a href="../lab/index.html" data-nav="lab">Lab</a>
+        <a href="../Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="https://www.linkedin.com/in/abbas-md/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main class="shell page-top-gap">
+      <section class="page-hero reveal">
+        <p class="eyebrow">2019 – 2021 | Solutionchamps Technologies</p>
+        <h1 class="page-title">DVR AI BOX</h1>
+        <p class="page-summary">
+          A production-ready AI-powered DVR platform built from the ground up, combining real-time video analytics,
+          WebRTC streaming, edge AI object detection, and automated cloud storage — delivered as the company's
+          flagship product on Nvidia Jetson Nano and Xavier hardware.
+        </p>
+      </section>
+
+      <section class="project-layout reveal">
+        <div class="project-main">
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Project context</p>
+            <h2 class="content-title">Why this project mattered</h2>
+            <p>
+              Security camera systems of the era were passive — they recorded footage but provided no intelligence.
+              Reviewing hours of video to find an event was entirely manual, and storage was handled without any
+              cost-aware strategy. The DVR AI BOX was built to change that: an edge AI platform that could detect
+              events in real time, surface relevant clips automatically, manage tiered storage intelligently, and
+              expose all of this through a clean API layer for scheduling systems, UI clients, and alerting workflows.
+            </p>
+            <p>
+              As one of the core AI and backend engineers on a 14-person team, I was responsible for the complete
+              AI component stack — recording engine, analytics engine, and the middleware and API layer that connected
+              them to the rest of the platform.
+            </p>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Recording engine</p>
+            <h2 class="content-title">High-quality video recording and stream management</h2>
+            <div class="step-grid">
+              <div class="step-card">
+                <strong>WebRTC streaming</strong>
+                <p>Designed and implemented the recording engine to support live WebRTC streams — enabling low-latency browser-based playback alongside storage capture.</p>
+              </div>
+              <div class="step-card">
+                <strong>Hardware-accelerated encoding</strong>
+                <p>Optimised all encoding and decoding using NVDEC and NVENC hardware accelerators on Jetson Nano and Xavier — reducing CPU load and enabling sustained high-throughput real-time capture.</p>
+              </div>
+              <div class="step-card">
+                <strong>Timeline indexing</strong>
+                <p>Built automatic clip segmentation, URL probing, and timeline indexing so any point in a recording could be located and retrieved without scanning entire video files.</p>
+              </div>
+              <div class="step-card">
+                <strong>Tiered storage</strong>
+                <p>Implemented a storage solution using SQLite for local metadata and Amazon S3 for primary clip storage, with automatic tiering to Glacier for cost-efficient long-term retention and configurable deletion policies for live storage.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Analytics engine</p>
+            <h2 class="content-title">Real-time AI event detection on live streams</h2>
+            <div class="step-grid">
+              <div class="step-card">
+                <strong>GStreamer pipeline</strong>
+                <p>Built the analytics engine on GStreamer with NVDEC hardware acceleration, enabling continuous background subtraction and motion analysis on live camera streams without degrading recording quality.</p>
+              </div>
+              <div class="step-card">
+                <strong>Object and motion detection</strong>
+                <p>Applied clustering and bounding box logic to distinguish genuine event activity from environmental noise, capturing pre-event and post-event image frames and exporting structured detection metadata for downstream workflows.</p>
+              </div>
+              <div class="step-card">
+                <strong>Tiny YOLO on Jetson</strong>
+                <p>Trained and deployed a Tiny YOLO model optimised specifically for Jetson hardware constraints — achieving lightweight, high-performance object detection at the edge with minimal power draw.</p>
+              </div>
+              <div class="step-card">
+                <strong>Automated S3 upload</strong>
+                <p>Automated detection results — images and event clips — to Amazon S3 immediately on event completion, feeding the downstream security alerting and notification workflows in real time.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Middleware and APIs</p>
+            <h2 class="content-title">Integration layer connecting AI, storage, and UI</h2>
+            <p>
+              Integrated backend services with Node-RED middleware for API handling and service orchestration.
+              This layer connected the recording and analytics engines to the frontend through a clean API surface,
+              enabling real-time playback control, device discovery and management via the Onvif protocol, and
+              customer alerting via email triggered by detection events. UI-driven API interactions — including
+              live stream access, clip retrieval, and device configuration — were all routed through this middleware
+              layer, making the backend modular and independently testable.
+            </p>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Delivery detail</p>
+            <h2 class="content-title">What I owned directly</h2>
+            <ul class="detail-list compact-list">
+              <li>Complete AI component stack across recording engine, analytics engine, and API middleware.</li>
+              <li>Hardware-accelerated pipeline design using NVDEC and NVENC on Jetson Nano and Xavier platforms.</li>
+              <li>Tiny YOLO model training, optimisation, and edge deployment for real-time object detection.</li>
+              <li>Cloud storage architecture covering S3 primary storage, Glacier tiering, and automated deletion policies.</li>
+              <li>Node-RED middleware integration connecting all backend services to UI and alerting systems.</li>
+              <li>Real-time event detection pipeline from live stream ingestion to structured S3 output.</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <aside class="project-side reveal">
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Quick facts</p>
+            <ul class="fact-list">
+              <li><span>Role</span><strong>Deep Learning Engineer — core AI and backend</strong></li>
+              <li><span>Team</span><strong>14-member DVR AI BOX development team</strong></li>
+              <li><span>Hardware</span><strong>Nvidia Jetson Nano / Xavier</strong></li>
+              <li><span>AI</span><strong>Tiny YOLO, GStreamer, NVDEC, NVENC</strong></li>
+              <li><span>Storage</span><strong>Amazon S3, Glacier, SQLite</strong></li>
+              <li><span>Middleware</span><strong>Node-RED, MongoDB, ASP.NET</strong></li>
+            </ul>
+          </article>
+
+          <article class="fact-panel glass-panel accent-panel">
+            <p class="mini-label">Tech stack</p>
+            <ul class="fact-list">
+              <li><strong>Nvidia Jetson Nano / Xavier</strong></li>
+              <li><strong>YOLO Darknet</strong></li>
+              <li><strong>GStreamer + FFMPEG</strong></li>
+              <li><strong>Node-RED</strong></li>
+              <li><strong>MongoDB + SQLite</strong></li>
+              <li><strong>Amazon S3 / Glacier</strong></li>
+              <li><strong>Angular 7 + ASP.NET</strong></li>
+            </ul>
+          </article>
+
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Business effect</p>
+            <div class="impact-metric">
+              <strong>Production-ready</strong>
+              <span>flagship product delivered end-to-end from the ground up</span>
+            </div>
+            <div class="impact-metric">
+              <strong>Real-time</strong>
+              <span>event detection and automated cloud upload eliminating manual review</span>
+            </div>
+          </article>
+
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Explore next</p>
+            <div class="side-links">
+              <a href="receipt-parsing-ocr.html">Receipt Parsing with OCR</a>
+              <a href="ai-asset-tracker.html">AI Asset Tracker</a>
+              <a href="qc-validation-framework.html">QC Tool and Validation Framework</a>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

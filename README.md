@@ -1,6 +1,6 @@
 # mdabbas-profile
 
-Static multi-page portfolio site for Mohamed Abbas Mojnudeen, built for GitHub Pages deployment.
+Static multi-page portfolio site for Mohamed Abbas Moynudeen, built for GitHub Pages deployment.
 
 ## Local preview
 

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KitchenEye AI — edge AI kitchen hygiene monitoring concept by Mohamed Abbas. Real-time FSSAI compliance using NVIDIA Jetson."
+    />
+    <title>KitchenEye AI | Mohamed Abbas Lab</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-nav="lab">
+    <div class="site-bg" aria-hidden="true">
+      <div class="site-orb orb-one"></div>
+      <div class="site-orb orb-two"></div>
+      <div class="site-orb orb-three"></div>
+      <div class="site-grid"></div>
+      <div class="site-beam beam-one"></div>
+      <div class="site-beam beam-two"></div>
+    </div>
+
+    <header class="site-header shell">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">MA</span>
+        <span class="brand-copy">
+          <strong>Mohamed Abbas</strong>
+          <span>Principal Engineer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="../projects/index.html" data-nav="projects">Projects</a>
+        <a href="../articles/index.html" data-nav="articles">Articles</a>
+        <a href="index.html" data-nav="lab">Lab</a>
+        <a href="../Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="https://www.linkedin.com/in/abbas-md/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main class="shell page-top-gap">
+      <section class="page-hero reveal">
+        <p class="eyebrow">In Planning · Edge AI / IoT</p>
+        <h1 class="page-title">KitchenEye AI</h1>
+        <p class="page-summary">
+          A 24/7 AI hygiene inspector for commercial kitchens. Connects to existing CCTV, detects violations in real
+          time, scores daily compliance, and generates audit reports for FSSAI inspections — all processing happening
+          on-device with no cloud dependency.
+        </p>
+        <p class="lab-tagline">"Always watching. Always safe."</p>
+      </section>
+
+      <section class="project-layout reveal">
+        <div class="project-main">
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">The problem</p>
+            <h2 class="content-title">Kitchen hygiene fails silently, then catastrophically</h2>
+            <p>
+              India reports over 100 million cases of food poisoning annually, and unhygienic commercial kitchens are
+              the primary cause. FSSAI regulations exist in theory but inspections happen once a year — if at all.
+              Kitchens clean up for the inspector and immediately revert to their normal habits.
+            </p>
+            <p>
+              Most restaurants and cloud kitchens have CCTV footage sitting on hard drives that nobody watches.
+              Violations happen every hour — staff handling food without gloves, uncovered ingredients, improper
+              storage, skipped handwashing — but there is no system to catch them in real time. The cost of one
+              viral video or outbreak incident is far higher than any investment in prevention.
+            </p>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">The solution</p>
+            <h2 class="content-title">Real-time detection, instant alerts, continuous compliance</h2>
+            <div class="step-grid">
+              <div class="step-card">
+                <strong>01 Watch</strong>
+                <p>The Jetson device connects to existing kitchen CCTV. AI monitors every corner of the kitchen 24 hours a day, 7 days a week — no new cameras needed.</p>
+              </div>
+              <div class="step-card">
+                <strong>02 Detect</strong>
+                <p>The system recognises violations the moment they happen — no gloves, no hairnet, food left uncovered, spills, pests, improper storage, skipped handwashing steps.</p>
+              </div>
+              <div class="step-card">
+                <strong>03 Alert</strong>
+                <p>Instant push notification to the kitchen manager. The violation is logged with a screenshot timestamp before staff can correct it and deny it happened.</p>
+              </div>
+              <div class="step-card">
+                <strong>04 Score and Report</strong>
+                <p>Daily hygiene score with breakdown by violation type. Weekly compliance report. Full audit trail exportable for FSSAI inspections — show compliance, not just a clean kitchen on inspection day.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">What it detects</p>
+            <h2 class="content-title">Violations the system will flag</h2>
+            <div class="capability-grid">
+              <article class="capability-card glass-panel">
+                <h3>No gloves</h3>
+                <p>Staff handling food without protective gloves — detected per individual, per station.</p>
+              </article>
+              <article class="capability-card glass-panel">
+                <h3>No hairnet or cap</h3>
+                <p>Hair not covered during food preparation. Flags both kitchen staff and supervisors in the zone.</p>
+              </article>
+              <article class="capability-card glass-panel">
+                <h3>Uncovered food</h3>
+                <p>Food left open and exposed on counters, prep surfaces, or storage areas — a primary contamination risk.</p>
+              </article>
+              <article class="capability-card glass-panel">
+                <h3>Skipped handwashing</h3>
+                <p>Staff entering the kitchen or transitioning between tasks without the correct handwashing sequence.</p>
+              </article>
+              <article class="capability-card glass-panel">
+                <h3>Pest detection</h3>
+                <p>Cockroaches, rodents, and flies detected near preparation or storage areas — alerts trigger immediately.</p>
+              </article>
+              <article class="capability-card glass-panel">
+                <h3>Floor hazards and spills</h3>
+                <p>Wet floors, debris, and spills flagged both as hygiene risks and as slip-and-fall safety hazards.</p>
+              </article>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Who it is for</p>
+            <h2 class="content-title">Target users</h2>
+            <p>
+              The primary market is <strong>cloud kitchens, QSR chains, and hotel food and beverage operations</strong>
+              in India — businesses that serve high volumes of food daily and carry significant brand risk from a single
+              hygiene incident. Food aggregator platforms like Swiggy and Zomato are a natural distribution channel
+              for mandating KitchenEye across their restaurant partners. Food processing units and catering companies
+              are secondary markets with similar compliance needs.
+            </p>
+          </article>
+
+        </div>
+
+        <aside class="project-side">
+          <div class="side-block glass-panel">
+            <p class="mini-label">Status</p>
+            <p class="lab-status-pill">In Planning</p>
+          </div>
+          <div class="side-block glass-panel">
+            <p class="mini-label">Domain</p>
+            <ul class="side-list">
+              <li>Edge AI</li>
+              <li>Computer Vision</li>
+              <li>Food Safety / IoT</li>
+            </ul>
+          </div>
+          <div class="side-block glass-panel">
+            <p class="mini-label">Core tech</p>
+            <ul class="side-list">
+              <li>NVIDIA Jetson</li>
+              <li>On-device inference</li>
+              <li>Real-time violation detection</li>
+              <li>Zero cloud dependency</li>
+            </ul>
+          </div>
+          <div class="side-block glass-panel">
+            <p class="mini-label">Primary market</p>
+            <ul class="side-list">
+              <li>Cloud kitchens</li>
+              <li>QSR and hotel chains</li>
+              <li>Food processing units</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <nav class="articles-footer-nav shell reveal" aria-label="Lab navigation">
+        <a href="furncraft-ai.html" class="text-link">← FurnCraft AI</a>
+        <a href="magic-mirror.html" class="text-link">Next: Magic Mirror →</a>
+      </nav>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

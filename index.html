@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Mohamed Abbas Mojnudeen, Principal Engineer focused on AI platforms, enterprise data systems, and technical leadership."
+      content="Portfolio of Mohamed Abbas Moynudeen, Principal Engineer focused on AI platforms, enterprise data systems, and technical leadership."
     />
-    <title>Mohamed Abbas Mojnudeen | Principal Engineer</title>
+    <title>Mohamed Abbas Moynudeen | Principal Engineer</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,6 +40,7 @@
         <a href="index.html" data-nav="home">Home</a>
         <a href="projects/index.html" data-nav="projects">Projects</a>
         <a href="articles/index.html" data-nav="articles">Articles</a>
+        <a href="lab/index.html" data-nav="lab">Lab</a>
         <a href="Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">Resume</a>
         <a href="https://www.linkedin.com/in/abbas-md/" target="_blank" rel="noreferrer">LinkedIn</a>
       </nav>
@@ -48,7 +49,7 @@
     <main>
       <section class="hero shell reveal">
         <div class="hero-copy">
-          <p class="eyebrow">Mohamed Abbas Mojnudeen</p>
+          <p class="eyebrow">Mohamed Abbas Moynudeen</p>
           <h1>Principal Engineer building AI systems that become business infrastructure.</h1>
           <p class="hero-summary">
             I design and lead enterprise platforms across AI, LLM integration, data engineering, and cloud-native
@@ -58,6 +59,7 @@
 
           <div class="hero-actions">
             <a class="button button-primary" href="projects/index.html">Explore projects</a>
+            <a class="button button-secondary" href="#book-services">Book a consultation</a>
             <a class="button button-secondary" href="Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">
               Open resume
             </a>
@@ -85,13 +87,101 @@
             <picture class="portrait-frame">
               <img
                 src="IMG/profile-placeholder.svg"
-                alt="Portrait of Mohamed Abbas Mojnudeen"
+                alt="Portrait of Mohamed Abbas Moynudeen"
                 data-profile-image
               />
             </picture>
             <p class="portrait-note">Drop profile.jpg or profile.png into the IMG folder and the hero will use it automatically.</p>
           </div>
         </aside>
+      </section>
+
+      <section class="section shell reveal">
+        <div class="section-heading split-heading" id="book-services">
+          <div>
+            <p class="eyebrow">Freelance services</p>
+            <h2>Book consulting directly from the site</h2>
+            <p class="section-note">Session price: 30 minutes for $10</p>
+          </div>
+        </div>
+
+        <div class="consult-layout">
+          <article class="consult-offer glass-panel">
+            <p class="mini-label">What I can provide</p>
+            <h3>High-impact sessions for delivery and architecture outcomes</h3>
+            <div class="service-pill-grid">
+              <span class="service-pill">AI Consulting</span>
+              <span class="service-pill">Technical Discussion</span>
+              <span class="service-pill">Architecture Discussion</span>
+              <span class="service-pill">LLM and RAG Design</span>
+              <span class="service-pill">Cloud and Data Engineering</span>
+              <span class="service-pill">ETL and Platform Strategy</span>
+              <span class="service-pill">Engineering Leadership Mentoring</span>
+            </div>
+            <p class="consult-note">
+              Pick a date and time, share your scope, and submit. The request opens directly in WhatsApp with your
+              selected service details.
+            </p>
+            <p class="consult-note">Fixed pricing: 30-minute consultation at $10.</p>
+          </article>
+
+          <form
+            class="booking-form glass-panel"
+            data-whatsapp-booking-form
+            data-whatsapp-number="8754264561"
+          >
+            <p class="mini-label">Session booking</p>
+            <h3>Schedule your consultation</h3>
+
+            <div class="booking-grid">
+              <label class="form-field">
+                <span>Your name</span>
+                <input type="text" name="clientName" required placeholder="Your full name" />
+              </label>
+
+              <label class="form-field">
+                <span>Email</span>
+                <input type="email" name="clientEmail" placeholder="you@company.com" />
+              </label>
+
+              <label class="form-field">
+                <span>Date</span>
+                <input type="date" name="bookingDate" required />
+              </label>
+
+              <label class="form-field">
+                <span>Time</span>
+                <input type="time" name="bookingTime" required />
+              </label>
+            </div>
+
+            <fieldset class="service-selector">
+              <legend>Service type</legend>
+              <div class="service-check-grid">
+                <label><input type="checkbox" name="serviceType" value="AI Consulting" />AI Consulting</label>
+                <label><input type="checkbox" name="serviceType" value="Technical Discussion" />Technical Discussion</label>
+                <label><input type="checkbox" name="serviceType" value="Architecture Discussion" />Architecture Discussion</label>
+                <label><input type="checkbox" name="serviceType" value="LLM and RAG Design" />LLM and RAG Design</label>
+                <label><input type="checkbox" name="serviceType" value="Cloud and Data Engineering" />Cloud and Data Engineering</label>
+                <label><input type="checkbox" name="serviceType" value="ETL and Platform Strategy" />ETL and Platform Strategy</label>
+              </div>
+            </fieldset>
+
+            <label class="form-field">
+              <span>Work description</span>
+              <textarea
+                name="workDescription"
+                rows="5"
+                required
+                placeholder="Briefly describe your use case, expected outcome, and any technical context."
+              ></textarea>
+            </label>
+
+            <button class="button button-primary" type="submit">Send booking to WhatsApp</button>
+            <p class="booking-note">Price: $10 for a 30-minute session.</p>
+            <p class="booking-status" data-booking-status aria-live="polite"></p>
+          </form>
+        </div>
       </section>
 
       <section class="section shell reveal">
@@ -157,10 +247,38 @@
             <span class="project-link">View architecture and delivery</span>
           </a>
 
-          <a class="project-preview glass-panel highlight-preview" href="projects/innovation-labs.html">
+          <a class="project-preview glass-panel" href="projects/innovation-labs.html">
             <span class="project-kicker">Internal initiatives</span>
             <h3>Innovation Labs</h3>
             <p>Adjacent systems across log analysis, developer productivity, and deployment standardization that increased engineering leverage.</p>
+            <span class="project-link">View architecture and delivery</span>
+          </a>
+
+          <a class="project-preview glass-panel" href="projects/dvr-ai-box.html">
+            <span class="project-kicker">2019 – 2021</span>
+            <h3>DVR AI BOX</h3>
+            <p>AI-powered DVR platform on Nvidia Jetson — real-time video analytics, Tiny YOLO detection, WebRTC streaming, and automated tiered cloud storage.</p>
+            <span class="project-link">View architecture and delivery</span>
+          </a>
+
+          <a class="project-preview glass-panel" href="projects/receipt-parsing-ocr.html">
+            <span class="project-kicker">2019 – 2021</span>
+            <h3>Receipt Parsing with OCR</h3>
+            <p>YOLOv4 field detection and OCR pipeline extracting structured receipt data from mobile images. Team lead across 6 engineers from dataset through production.</p>
+            <span class="project-link">View architecture and delivery</span>
+          </a>
+
+          <a class="project-preview glass-panel" href="projects/recommendation-engine-ecommerce.html">
+            <span class="project-kicker">2019 – 2021</span>
+            <h3>Recommendation Engine for E-Commerce</h3>
+            <p>Personalised product recommendations combining Apriori association rules with Keras/TensorFlow deep learning. Team lead, production delivered.</p>
+            <span class="project-link">View architecture and delivery</span>
+          </a>
+
+          <a class="project-preview glass-panel" href="projects/rpa-product-development.html">
+            <span class="project-kicker">2018 – 2019</span>
+            <h3>RPA Product Development Platform</h3>
+            <p>Full-stack RPA product engineering across automation workflows, object detection, REST APIs, Electron apps, and AWS deployment. Team lead and integrator.</p>
             <span class="project-link">View architecture and delivery</span>
           </a>
         </div>
@@ -175,40 +293,99 @@
           <a class="text-link" href="articles/index.html">Open all articles</a>
         </div>
 
+        <div class="article-carousel" data-article-carousel>
+          <div class="article-track" data-article-track>
+            <div class="article-slide" data-article-slide>
+              <div class="project-preview-grid article-slide-grid">
+                <a class="project-preview glass-panel" href="articles/neurosymbolic-ai-data-industry.html">
+                  <span class="project-kicker">Page 1 | June 19, 2025</span>
+                  <h3>Neurosymbolic AI for Data Industry</h3>
+                  <p>End-to-end guide for domain-based models with architecture, tools, retraining, and optimization practices.</p>
+                  <span class="project-link">Read article</span>
+                </a>
+
+                <a class="project-preview glass-panel" href="articles/evolution-llm-grounding.html">
+                  <span class="project-kicker">Page 2 | November 26, 2025</span>
+                  <h3>The Evolution of LLM Grounding</h3>
+                  <p>A practical comparison of RAG, CAG, and KAG with real-world fit, trade-offs, and system design guidance.</p>
+                  <span class="project-link">Read article</span>
+                </a>
+
+                <a class="project-preview glass-panel" href="articles/ai-powered-log-analysis-legacy-systems.html">
+                  <span class="project-kicker">Page 3 | August 21, 2025</span>
+                  <h3>AI-Powered Log Analysis for Legacy Systems</h3>
+                  <p>A practical blueprint for turning legacy log volume into proactive intelligence, security visibility, and cost efficiency.</p>
+                  <span class="project-link">Read article</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="article-slide" data-article-slide>
+              <div class="project-preview-grid article-slide-grid">
+                <a class="project-preview glass-panel" href="articles/aws-bedrock-ai-etl.html">
+                  <span class="project-kicker">Page 4 | January 2, 2025</span>
+                  <h3>AWS Bedrock AI ETL</h3>
+                  <p>A production-friendly ETL architecture pattern for building Bedrock-powered AI pipelines across AWS data and orchestration services.</p>
+                  <span class="project-link">Read article</span>
+                </a>
+
+                <a class="project-preview glass-panel" href="articles/automating-unstructured-data-processing-ai-services.html">
+                  <span class="project-kicker">Page 5 | November 7, 2024</span>
+                  <h3>Automating Large-Scale Unstructured Data Processing</h3>
+                  <p>Includes architecture guidance plus embedded Python and Terraform snippets for AI-powered data pipelines.</p>
+                  <span class="project-link">Read article</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-carousel-controls" aria-label="Article slides navigation">
+            <button class="carousel-button" type="button" data-article-prev aria-label="Previous article slide">Previous</button>
+            <div class="carousel-dots" aria-label="Slide indicators">
+              <button class="carousel-dot carousel-dot-active" type="button" data-article-dot="0" aria-label="Go to slide 1"></button>
+              <button class="carousel-dot" type="button" data-article-dot="1" aria-label="Go to slide 2"></button>
+            </div>
+            <button class="carousel-button" type="button" data-article-next aria-label="Next article slide">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell reveal">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Mohamed Abbas Lab</p>
+            <h2>Product concepts I am designing and planning to build</h2>
+          </div>
+          <a class="text-link" href="lab/index.html">Explore all 6 concepts</a>
+        </div>
+
         <div class="project-preview-grid">
-          <a class="project-preview glass-panel" href="articles/neurosymbolic-ai-data-industry.html">
-            <span class="project-kicker">Page 1 | June 19, 2025</span>
-            <h3>Neurosymbolic AI for Data Industry</h3>
-            <p>End-to-end guide for domain-based models with architecture, tools, retraining, and optimization practices.</p>
-            <span class="project-link">Read article</span>
+          <a class="project-preview glass-panel" href="lab/furncraft-ai.html">
+            <span class="project-kicker lab-kicker">In Planning · AI / Computer Vision</span>
+            <h3>FurnCraft AI</h3>
+            <p>Snap a photo of any furniture. AI splits it into components. Customize and export to factory. Canva for furniture manufacturers.</p>
+            <span class="project-link">Explore concept</span>
           </a>
 
-          <a class="project-preview glass-panel" href="articles/evolution-llm-grounding.html">
-            <span class="project-kicker">Page 2 | November 26, 2025</span>
-            <h3>The Evolution of LLM Grounding</h3>
-            <p>A practical comparison of RAG, CAG, and KAG with real-world fit, trade-offs, and system design guidance.</p>
-            <span class="project-link">Read article</span>
+          <a class="project-preview glass-panel" href="lab/oceanguard-ai.html">
+            <span class="project-kicker lab-kicker">In Planning · Edge AI / Geospatial</span>
+            <h3>OceanGuard AI</h3>
+            <p>Edge AI safety system for fishing boats. Alerts fishermen in their language before they cross maritime borders. Works fully offline at sea.</p>
+            <span class="project-link">Explore concept</span>
           </a>
 
-          <a class="project-preview glass-panel" href="articles/ai-powered-log-analysis-legacy-systems.html">
-            <span class="project-kicker">Page 3 | August 21, 2025</span>
-            <h3>AI-Powered Log Analysis for Legacy Systems</h3>
-            <p>A practical blueprint for turning legacy log volume into proactive intelligence, security visibility, and cost efficiency.</p>
-            <span class="project-link">Read article</span>
+          <a class="project-preview glass-panel" href="lab/regradar-ai.html">
+            <span class="project-kicker lab-kicker">In Planning · AI / LLM</span>
+            <h3>RegRadar AI</h3>
+            <p>AI compliance intelligence for Indian businesses. Monitors 1,500+ regulations and pushes targeted alerts before deadlines, not after penalties.</p>
+            <span class="project-link">Explore concept</span>
           </a>
 
-          <a class="project-preview glass-panel" href="articles/aws-bedrock-ai-etl.html">
-            <span class="project-kicker">Page 4 | January 2, 2025</span>
-            <h3>AWS Bedrock AI ETL</h3>
-            <p>A production-friendly ETL architecture pattern for building Bedrock-powered AI pipelines across AWS data and orchestration services.</p>
-            <span class="project-link">Read article</span>
-          </a>
-
-          <a class="project-preview glass-panel" href="articles/automating-unstructured-data-processing-ai-services.html">
-            <span class="project-kicker">Page 5 | November 7, 2024</span>
-            <h3>Automating Large-Scale Unstructured Data Processing</h3>
-            <p>Includes architecture guidance plus embedded Python and Terraform snippets for AI-powered data pipelines.</p>
-            <span class="project-link">Read article</span>
+          <a class="project-preview glass-panel" href="lab/index.html">
+            <span class="project-kicker lab-kicker">3 more concepts</span>
+            <h3>+3 more in the Lab</h3>
+            <p>KitchenEye AI, Magic Mirror, and SkillForge AI — plus the full thinking behind all six product ideas.</p>
+            <span class="project-link">Open the Lab</span>
           </a>
         </div>
       </section>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Receipt Parsing with OCR project page for Mohamed Abbas Moynudeen — YOLOv4 field detection, Flask API pipeline, and 10,000-receipt custom dataset."
+    />
+    <title>Receipt Parsing with OCR | Mohamed Abbas Moynudeen</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-nav="projects">
+    <div class="site-bg" aria-hidden="true">
+      <div class="site-orb orb-one"></div>
+      <div class="site-orb orb-two"></div>
+      <div class="site-orb orb-three"></div>
+      <div class="site-grid"></div>
+      <div class="site-beam beam-one"></div>
+      <div class="site-beam beam-two"></div>
+    </div>
+
+    <header class="site-header shell">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">MA</span>
+        <span class="brand-copy">
+          <strong>Mohamed Abbas</strong>
+          <span>Principal Engineer</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html" data-nav="home">Home</a>
+        <a href="index.html" data-nav="projects">Projects</a>
+        <a href="../articles/index.html" data-nav="articles">Articles</a>
+        <a href="../lab/index.html" data-nav="lab">Lab</a>
+        <a href="../Md_Abbas_20250825_215203_0000.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="https://www.linkedin.com/in/abbas-md/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </header>
+
+    <main class="shell page-top-gap">
+      <section class="page-hero reveal">
+        <p class="eyebrow">2019 – 2021 | Solutionchamps Technologies</p>
+        <h1 class="page-title">Receipt Parsing with OCR</h1>
+        <p class="page-summary">
+          An end-to-end receipt parsing system using object detection and OCR to extract structured fields — date,
+          tax, total, and line items — from mobile-captured receipt images. Led a six-member team from dataset
+          collection through production deployment.
+        </p>
+      </section>
+
+      <section class="project-layout reveal">
+        <div class="project-main">
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Project context</p>
+            <h2 class="content-title">Why this project mattered</h2>
+            <p>
+              Manually entering receipt data is slow, error-prone, and expensive at scale. The goal was to build a
+              system that could take a photo of any receipt — captured on an ordinary mobile device under variable
+              lighting and angles — and reliably extract structured fields without human intervention. This meant
+              solving two coupled problems: accurately locating each field on the receipt using object detection,
+              then correctly reading the text within each detected region using OCR and classification techniques.
+            </p>
+            <p>
+              I led the project as team leader across a six-member team, handling sprint planning under agile
+              methodology, acting as code integrator, and personally resolving the deployment blockers that blocked
+              the production release.
+            </p>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">How I achieved it</p>
+            <h2 class="content-title">Execution approach</h2>
+            <div class="step-grid">
+              <div class="step-card">
+                <strong>01 Dataset collection</strong>
+                <p>Collected and annotated a custom dataset of 10,000 receipts covering a wide range of formats, layouts, fonts, and capture conditions — essential for training a model robust enough for real-world mobile images.</p>
+              </div>
+              <div class="step-card">
+                <strong>02 Field detection</strong>
+                <p>Trained a YOLOv4 model on the annotated dataset to localise receipt fields — date, tax, total, and line item regions — by bounding box, handling the layout variance present across different merchant receipt formats.</p>
+              </div>
+              <div class="step-card">
+                <strong>03 Parsing pipeline</strong>
+                <p>Built a Flask REST API that accepted uploaded receipt images, ran them through the detection model to extract field regions, and applied OCR and text classification to convert each region into structured output.</p>
+              </div>
+              <div class="step-card">
+                <strong>04 Accuracy improvement</strong>
+                <p>Applied transfer learning techniques on top of the base OCR layer to improve recognition accuracy on domain-specific receipt text — improving reliability on tax codes, currency formats, and abbreviated line item descriptions.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Architecture</p>
+            <h2 class="content-title">System pipeline</h2>
+            <div class="architecture-flow">
+              <div class="flow-node">
+                <h3>Image ingestion</h3>
+                <p>Flask REST API accepts mobile-captured receipt images via multipart upload, preprocessing for normalisation and orientation correction before inference.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Field detection</h3>
+                <p>YOLOv4 model runs inference on the preprocessed image, producing bounding box predictions for each target field — date, tax amount, total, and line item rows.</p>
+              </div>
+              <div class="flow-node">
+                <h3>OCR extraction</h3>
+                <p>Each detected region is cropped and passed through the OCR layer with transfer learning fine-tuning applied for receipt-specific text patterns.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Text classification</h3>
+                <p>Classification layer disambiguates field types where detection confidence is low and normalises extracted values — currency, dates, tax identifiers — into a consistent structured schema.</p>
+              </div>
+              <div class="flow-node">
+                <h3>Structured output</h3>
+                <p>API returns a JSON response with all extracted fields, confidence scores per field, and raw detected text — ready for downstream accounting, expense, or ERP integrations.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="content-block glass-panel">
+            <p class="mini-label">Leadership</p>
+            <h2 class="content-title">Team lead and code integrator</h2>
+            <p>
+              As team leader across the six-member engineering team, I ran sprint planning and task decomposition
+              under agile methodology, maintained the integration branch, and served as the primary code reviewer
+              and merge coordinator. When the production deployment encountered blockers — environment configuration
+              issues and model serving instability — I resolved them directly and rapidly, which was recognised by
+              the team and stakeholders as a key reason the project shipped on schedule.
+            </p>
+          </article>
+
+        </div>
+
+        <aside class="project-side reveal">
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Quick facts</p>
+            <ul class="fact-list">
+              <li><span>Role</span><strong>Team Lead and Deep Learning Engineer</strong></li>
+              <li><span>Team size</span><strong>6 members</strong></li>
+              <li><span>Methodology</span><strong>Agile sprint planning</strong></li>
+              <li><span>Dataset</span><strong>10,000 annotated receipts</strong></li>
+              <li><span>Model</span><strong>YOLOv4 for field localisation</strong></li>
+              <li><span>API</span><strong>Flask REST — image ingestion to structured output</strong></li>
+            </ul>
+          </article>
+
+          <article class="fact-panel glass-panel accent-panel">
+            <p class="mini-label">Business effect</p>
+            <div class="impact-metric">
+              <strong>Production deployed</strong>
+              <span>end-to-end pipeline from raw receipt image to structured JSON</span>
+            </div>
+            <div class="impact-metric">
+              <strong>Recognised</strong>
+              <span>for fast turnaround and direct resolution of deployment blockers</span>
+            </div>
+          </article>
+
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Tech stack</p>
+            <ul class="fact-list">
+              <li><strong>YOLOv4</strong></li>
+              <li><strong>OCR + text classification</strong></li>
+              <li><strong>Transfer learning</strong></li>
+              <li><strong>Flask REST API</strong></li>
+              <li><strong>Python</strong></li>
+            </ul>
+          </article>
+
+          <article class="fact-panel glass-panel">
+            <p class="mini-label">Explore next</p>
+            <div class="side-links">
+              <a href="dvr-ai-box.html">DVR AI BOX</a>
+              <a href="ai-asset-tracker.html">AI Asset Tracker</a>
+              <a href="qc-validation-framework.html">QC Tool and Validation Framework</a>
+                          <a href="recommendation-engine-ecommerce.html">Recommendation Engine for E-Commerce</a>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
