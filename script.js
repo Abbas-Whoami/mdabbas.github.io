@@ -11,7 +11,7 @@ const energyCards = document.querySelectorAll('.project-preview, .feature-card, 
 const sceneSections = document.querySelectorAll('main .section, main .page-hero, main .project-layout, main .content-block');
 const themeStorageKey = 'site-theme-preference';
 const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
+// md_abbas
 const getStoredThemePreference = () => {
   const preference = localStorage.getItem(themeStorageKey);
   return preference === 'light' || preference === 'dark' || preference === 'auto' ? preference : 'auto';
