@@ -63,17 +63,29 @@ if not exist "venv" (
 :: Activate virtual environment
 echo [SETUP] Activating virtual environment...
 call venv\Scripts\activate.bat
+if %errorlevel% neq 0 (
+    echo [ERROR] Failed to activate virtual environment.
+    pause
+    exit /b 1
+)
 echo [OK] Virtual environment activated.
 echo.
 
 :: Install dependencies
 echo [SETUP] Installing dependencies (this may take a few minutes)...
 echo.
-pip install --upgrade pip >nul 2>&1
+pip install --upgrade pip
+if %errorlevel% neq 0 (
+    echo [WARNING] pip upgrade failed, continuing...
+    echo.
+)
+
 pip install -r requirements.txt
 if %errorlevel% neq 0 (
     echo.
     echo [ERROR] Failed to install dependencies.
+    echo Please check your internet connection and try again.
+    echo.
     pause
     exit /b 1
 )
@@ -117,8 +129,5 @@ echo   Processing complete!
 echo   Output saved to: output\footage_processed.mp4
 echo ============================================================
 echo.
-
-:: Deactivate virtual environment
-call venv\Scripts\deactivate.bat >nul 2>&1
 
 pause
